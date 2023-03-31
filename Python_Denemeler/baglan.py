@@ -27,3 +27,7 @@ classname=globals()[dbname]
 x=classname()
 x.connect()
 x.disconnect()
+
+d
+
+
