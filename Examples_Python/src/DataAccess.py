@@ -11,11 +11,13 @@ class Cari_Access():
         self._ICari = DB_Interface
         self.x=self._ICari()
         self.listee= LG_Interface
-    def sil(self):
-       self.x.connect()
-       for qwe in self.listee:
+    def sil(self,mesaj):
+        print(mesaj)
+        self.x.connect()
+        for qwe in self.listee:
           # print(qwe)
            qwe.connect(self)
+        
        
        
        
