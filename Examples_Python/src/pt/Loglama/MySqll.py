@@ -9,6 +9,6 @@ from DBInterfacee import DBInterface
 
 class LG_MySql(DBInterface):
    def connect(self):
-       print('Connecting to MySql Database...')
+       print('Connecting to Loglama MySql Database...')
    def disconnect(self):
-       print('Disconnecting to MySql Database...')
+       print('Disconnecting to LoglamaMySql Database...')

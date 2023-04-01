@@ -10,4 +10,4 @@ from pt.Loglama.MySqll  import  LG_MySql
 
 classname = Oracle
 clsnm = Sybase
-lgcls = LG_MySql
+lgcls = [LG_Oracle]

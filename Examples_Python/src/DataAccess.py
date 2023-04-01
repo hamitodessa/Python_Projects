@@ -10,11 +10,12 @@ class Cari_Access():
     def __init__(self, DB_Interface,LG_Interface):
         self._ICari = DB_Interface
         self.x=self._ICari()
-        self._ILoglama = LG_Interface
-        self.y =self._ILoglama()
+        self.listee= LG_Interface
     def sil(self):
        self.x.connect()
-       self.y.connect()
+       for qwe in self.listee:
+          # print(qwe)
+           qwe.connect(self)
        
        
        
