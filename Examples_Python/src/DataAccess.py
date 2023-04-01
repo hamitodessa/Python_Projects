@@ -15,27 +15,26 @@ class Cari_Access():
         print(mesaj)
         self.x.connect()
         for qwe in self.listee:
-          # print(qwe)
-           qwe.connect(self)
+            qwe.connect(self)
         
        
        
        
        
        
-       
-       
- #   def kaydet(self, DB_Interface ,Loglama_Interface  ):
- #      classname = DB_Interface
- #      x=classname()
- #      x.connect()
+"""     
+  __dict__     
+    def kaydet(self, DB_Interface ,Loglama_Interface  ):
+       classname = DB_Interface
+       x=classname()
+       x.connect()
      
        
- #      clsnm = Loglama_Interface 
- #      x=clsnm()
- #      x.connect()
+       clsnm = Loglama_Interface 
+       x=clsnm()
+       x.connect()
       
-    
+"""
         
         
   
