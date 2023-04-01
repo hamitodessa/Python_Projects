@@ -4,10 +4,9 @@ Created on Mar 30, 2023
 @author: hamit
 '''
 
-import DBInterface as myModule
-k = myModule.DBInterface()
+from DBInterfacee import DBInterface
 
-class Sybase(k):
+class Sybase(DBInterface):
    def connect(self):
        print('Connecting to Sybase Database...')
    def disconnect(self):

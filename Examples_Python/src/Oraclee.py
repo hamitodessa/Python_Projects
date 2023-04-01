@@ -3,14 +3,11 @@ Created on Mar 30, 2023
 
 @author: hamit
 '''
-
-import DBInterface as myModule
-k = myModule.DBInterface()
+from DBInterfacee import DBInterface
 
 
 
-
-class Oracle(k):
+class Oracle(DBInterface):
    def connect(self):
        print('Connecting to Oracle Database...')
    def disconnect(self):
