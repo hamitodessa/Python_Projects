@@ -43,4 +43,6 @@ def cONNECT(uSER):
     b_OKU.bILGI_OKU(uSER, "Sms",smsDizin,"OK_Sms");
     
 cONNECT("hamit")
+print(kurDizin.kOD)
+print(cariDizin.kOD)
     
