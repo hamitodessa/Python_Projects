@@ -3,11 +3,12 @@ Created on Apr 1, 2023
 
 @author: hamit
 '''
-
+    
 #region SURUCU_DOSYA_BILGILERI
 SURUCU = "C:/OBS_SISTEM/"
-OBS_DOSYA = "OBS_SISTEM_2025.MDB"
+OBS_DOSYA = "OBS_SISTEM_2030.DB"
 LOG_DOSYA = "SQL_LOG.MDB"
+
 
 #Calisilan Database ler
 from fh.Dao_MsSql   import  Ms_Sql
@@ -19,7 +20,11 @@ from lg.Dao_MySql    import  Dao_MySql
 from lg.Dao_SqLite    import  Dao_SqLite
 from lg.Dao_Txt    import  Dao_Txt
 
-
+#Veritabani Dosyalari
+import sqlite3
+global conn 
+global curs 
+#
 _ICar = None
 _IStok = None
 _IKur = None
@@ -38,3 +43,31 @@ _ISms_Loger = None
 _IGunluk_Loger = None 
 _IFihrist_Loger = None 
     
+
+def myConnection():
+    return sqlite3.connect(SURUCU + OBS_DOSYA)
+    
+def obs_dosya_olustur():
+    conn =myConnection()
+    curs = conn.cursor()
+    sql = "CREATE TABLE GIDEN_RAPOR (ID    INTEGER PRIMARY KEY AUTOINCREMENT,USER_NAME    CHAR(20) NOT NULL,TARIH    DATE, \
+             KONU    CHAR(50),RAPOR    CHAR(50),ALICI    CHAR(50),ACIKLAMA CHAR(100),GONDEREN CHAR(50)); " 
+    curs.execute(sql)
+    sql = "CREATE TABLE E_MAIL_BILGILERI (USER_NAME    CHAR(20) NOT NULL,HESAP    CHAR(40),HOST    CHAR(30),PORT    CHAR(20), \
+            SIFR    BLOB,SSL    INTEGER,TSL    INTEGER,GON_MAIL CHAR (40),GON_ISIM CHAR(50) ,PRIMARY KEY(\"USER_NAME\")); " 
+    curs.execute(sql)
+    sql = "CREATE TABLE IP (IPID     INTEGER PRIMARY KEY AUTOINCREMENT ,IP    CHAR(50) NOT NULL,USER_NAME    CHAR(20) ); "
+    curs.execute(sql)
+    sql = "CREATE TABLE USER_DETAILS (CDID INTEGER PRIMARY KEY AUTOINCREMENT ,USER_PROG_KODU    CHAR(10) NOT NULL,USER_NAME    \
+            CHAR(20),USER_SERVER CHAR(50), USER_PWD_SERVER BLOB,USER_INSTANCE_OBS CHAR(50),USER_IP_OBS CHAR(50),USER_PROG_OBS CHAR(20), \
+            DIZIN CHAR(200),YER CHAR(1), DIZIN_CINS CHAR(1),IZINLI_MI CHAR(1),CALISAN_MI CHAR(1),HANGI_SQL CHAR(10),LOG INTEGER , LOG_YERI CHAR(75)); " 
+    curs.execute(sql)
+    sql = "CREATE TABLE EKSTRE (TARIH CHAR(10) ,EVRAK INTEGER,IZAHAT CHAR(100),KOD CHAR(10),KUR DOUBLE, BORC DOUBLE,ALACAK DOUBLE ,BAKIYE DOUBLE) ;"  
+    curs.execute(sql)
+    sql = "CREATE TABLE USERS (USER_NAME    CHAR(20),USER_PWD BLOB,USER_LEVEL CHAR(2),USER_DB_IZIN CHAR(255),USER_MAIL CHAR(50),USER_YENI_DOSYA_ACMA INTEGER, \
+            USER_YENI_DOSYA_ACMA_SERVER INTEGER, PRIMARY KEY(\"USER_NAME\")); " 
+    curs.execute(sql)
+    sql = "CREATE TABLE LOG_MAIL (USER_NAME    CHAR(20),E_MAIL     CHAR(50), AKTIV  INTEGER); " 
+    curs.execute(sql)
+    conn.commit()
+    # do something
