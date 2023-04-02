@@ -5,7 +5,7 @@ Created on Apr 1, 2023
 '''
 
 from abc import *
-class DBInterface(ABC):
+class IFihristt(ABC):
    @abstractmethod
    def connect(self):
        pass
