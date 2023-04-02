@@ -4,7 +4,7 @@ Created on Apr 2, 2023
 @author: hamit
 '''
 
-from Cal_Dizini.Dizin_Bilgileri import DIZIN_BILGILERI 
+
 import Global.Global as glb
 #Veritabani Dosyalari
 conn = None

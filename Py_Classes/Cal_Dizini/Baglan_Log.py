@@ -5,7 +5,7 @@ Created on Apr 2, 2023
 '''
 
 from Cal_Dizini.Dizin_Bilgileri import DIZIN_BILGILERI
-import Cal_Dizini.Bilgi_Oku_Log as BILGI_OKU_LOG
+from Cal_Dizini.Bilgi_Oku_Log import Bilgi_Oku_Log
 import Cal_Dizini.Baglan as BAGLAN 
 
     
@@ -20,8 +20,9 @@ smsLogDizin = DIZIN_BILGILERI()  # // SMS
 fihLogDizin = DIZIN_BILGILERI()  # // Fihrist
     
     
-def cONNECT(uSER):
-    b_OKU = BILGI_OKU_LOG()
+def cONNECT():
+    b_OKU = Bilgi_Oku_Log()
+    print(BAGLAN.cariDizin.yER)
     b_OKU.bILGI_OKU(cariLogDizin,"OK_Car", BAGLAN.cariDizin);
     b_OKU.bILGI_OKU(kurLogDizin,"OK_Kur", BAGLAN.kurDizin);
     b_OKU.bILGI_OKU(fatLogDizin,"OK_Fat", BAGLAN.fatDizin);
@@ -30,4 +31,5 @@ def cONNECT(uSER):
     b_OKU.bILGI_OKU(kamLogDizin,"OK_Kam", BAGLAN.kamDizin);
     b_OKU.bILGI_OKU(smsLogDizin,"OK_Sms", BAGLAN.smsDizin);
     b_OKU.bILGI_OKU(fihLogDizin,"OK_Fih", BAGLAN.fihDizin);
-    
+   
+ 

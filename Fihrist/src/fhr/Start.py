@@ -21,6 +21,14 @@ ui= Ui_MainWindow()
 ui.setupUi(penAna)
 penAna.show()
 
+#
+#import Cal_Dizini.Baglan as bAGLAN
+#import Cal_Dizini.Baglan_Log as bAGLAN_LOG
+#bAGLAN.cONNECT("hamit");
+#bAGLAN_LOG.cONNECT();
+#
+
+
 
 glb.obs_dosya_olustur()
 

@@ -45,4 +45,7 @@ def cONNECT(uSER):
 cONNECT("hamit")
 print(kurDizin.kOD)
 print(cariDizin.kOD)
+
+
+
     
