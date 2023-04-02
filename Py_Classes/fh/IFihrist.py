@@ -11,5 +11,8 @@ class IFihristt(ABC):
     def connect(self):
         pass
     @abstractmethod
+    def db_kontrol_L(self):
+        pass
+    @abstractmethod
     def disconnect(self):
         pass
