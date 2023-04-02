@@ -5,7 +5,9 @@ Created on Apr 1, 2023
 '''
 from abc import *
 class ILogerr(ABC):
-   @abstractmethod
-   def logla(self):
-       pass
-   
+    @abstractmethod
+    def logla(self):
+        pass
+    def log_rapor(self):
+        pass
+    

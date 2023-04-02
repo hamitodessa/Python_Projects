@@ -8,6 +8,5 @@ from lg.ILoger import ILogerr
 
 
 class Maill(ILogerr):
-   def logla(self):
-       print('Connecting to Mysql Database...')
-  
+    def logla(self,mesaj):
+        print('Connecting to Mail aT Database...' + mesaj)

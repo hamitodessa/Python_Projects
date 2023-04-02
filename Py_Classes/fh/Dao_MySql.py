@@ -9,7 +9,7 @@ from fh.IFihrist import IFihristt
 
 
 class MySql(IFihristt):
-   def connect(self):
-       print('Connecting to Mysql Database...')
-   def disconnect(self):
-       print('Disconnecting to Mysql Database...')
+    def connect(self):
+        print('Connecting to Mysql Database...')
+    def disconnect(self):
+        print('Disconnecting to Mysql Database...')
