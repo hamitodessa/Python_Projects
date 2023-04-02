@@ -7,9 +7,9 @@ Created on Apr 1, 2023
 class Fihrist_Access():
     def __init__(self, IFihrist,ILoger):
         self._IFihrist = IFihrist
-        self.x=self._IFihrist()
-        self.listee= ILoger
+        self.IDb=self._IFihrist()
+        self.log_liste= ILoger
     def baglan(self,mesaj):
-        self.x.connect()
-        for qwe in self.listee:
+        self.IDb.connect()
+        for qwe in self.log_liste:
             qwe.logla(self,mesaj)
