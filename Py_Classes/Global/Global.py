@@ -8,7 +8,7 @@ Created on Apr 1, 2023
 SURUCU = "C:/OBS_SISTEM/"
 OBS_DOSYA = "OBS_SISTEM_2030.DB"
 LOG_DOSYA = "SQL_LOG.MDB"
-
+DBYERI = "C:/OBS_DATABASES/"
 
 #Calisilan Database ler
 from fh.Dao_MsSql   import  Ms_Sql
@@ -22,8 +22,8 @@ from lg.Dao_Txt    import  Dao_Txt
 
 #Veritabani Dosyalari
 import sqlite3
-global conn 
-global curs 
+conn = None
+curs = None
 #
 _ICar = None
 _IStok = None
@@ -45,10 +45,13 @@ _IFihrist_Loger = None
     
 
 def myConnection():
-    return sqlite3.connect(SURUCU + OBS_DOSYA)
+    try:
+        return sqlite3.connect(SURUCU + OBS_DOSYA)
+    except:
+        return None
     
 def obs_dosya_olustur():
-    conn =myConnection()
+    conn =myConnection() #if None
     curs = conn.cursor()
     sql = "CREATE TABLE GIDEN_RAPOR (ID    INTEGER PRIMARY KEY AUTOINCREMENT,USER_NAME    CHAR(20) NOT NULL,TARIH    DATE, \
              KONU    CHAR(50),RAPOR    CHAR(50),ALICI    CHAR(50),ACIKLAMA CHAR(100),GONDEREN CHAR(50)); " 
@@ -70,4 +73,23 @@ def obs_dosya_olustur():
     sql = "CREATE TABLE LOG_MAIL (USER_NAME    CHAR(20),E_MAIL     CHAR(50), AKTIV  INTEGER); " 
     curs.execute(sql)
     conn.commit()
+def surucu_kontrol():
+    import os
+    isExist = os.path.exists(SURUCU)
+    if isExist == False:
+            os.mkdir(SURUCU) 
+    isExist = os.path.exists(DBYERI)
+    if isExist == False:
+            os.mkdir(DBYERI) 
+    isExist =os.path.isfile(SURUCU + OBS_DOSYA)
+    if isExist:
+        propisExist =os.path.isfile(SURUCU +  "/admin.properties")
+        if propisExist == False:
+            #set_ilk() #obs_set_olustur();
+            print("prop yok")
+    else:
+        obs_dosya_olustur
+        #Tema_Cari.dosya_yap();
+        #set_ilk()  //obs_set_olustur();
+            
     # do something

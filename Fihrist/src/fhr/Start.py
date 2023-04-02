@@ -13,8 +13,6 @@ from PyQt5.QtWidgets import *
 from Global import Global  as glb
 from fh.Access_DB import Fihrist_Access 
 
-
-
 from fhr.UI_Files.Anapencere import *
 
 Uygulama= QApplication(sys.argv)
