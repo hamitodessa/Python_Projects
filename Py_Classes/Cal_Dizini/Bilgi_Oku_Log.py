@@ -7,10 +7,7 @@ Created on Apr 2, 2023
 import Global.Global as glb
 
 class Bilgi_Oku_Log:
-    def bILGI_OKU(self, dIZINN  , dOSYA_BASLANGIC, oDIZINN ):
-        print(dIZINN)
-        oDIZIN = oDIZINN
-        dIZIN = dIZINN
+    def bILGI_OKU(self, dIZIN  , dOSYA_BASLANGIC, oDIZIN ):
         if (oDIZIN.yER == "L") :
             if (oDIZIN.hAN_SQL == "MS SQL"):
                 dIZIN.kULLANICI = oDIZIN.kULLANICI

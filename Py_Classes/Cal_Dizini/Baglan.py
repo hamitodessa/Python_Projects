@@ -6,8 +6,6 @@ Created on Apr 2, 2023
 
 from Cal_Dizini.Dizin_Bilgileri import DIZIN_BILGILERI
 from Cal_Dizini.Bilgi_Okuma import Bilgi_Oku
-
-
     
 kurConn = None 
 cariConn = None 
@@ -17,8 +15,6 @@ gunConn = None
 kamConn = None 
 smsConn = None 
 fihConn = None 
-
-    
     
 kurDizin = DIZIN_BILGILERI()  # // Kur
 fihDizin = DIZIN_BILGILERI()  # // Fihrist

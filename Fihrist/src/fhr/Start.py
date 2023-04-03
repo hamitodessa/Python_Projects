@@ -31,7 +31,7 @@ print ("kull1=" +bAGLAN.cariDizin.kULLANICI)
 print ("kull2=" +bAGLAN.cariDizin.kOD)
 print ("kull3=" +bAGLAN.cariDizin.sERVER)
 print ("kull4=" +bAGLAN_LOG.cariLogDizin.cONN_STR)
-print ("kull5=" +bAGLAN_LOG.cariLogDizin.lOGLAMA_YERI)
+print ("kull5=" +bAGLAN_LOG.cariLogDizin.mODULADI)
 #
 
 
