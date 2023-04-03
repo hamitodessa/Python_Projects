@@ -49,9 +49,13 @@ fih.baglan("Deneme mesaji")
 def btnAyarlar():
     print(ui.tabKontrol.currentIndex())
     #ui.tabKontrol.setCurrentIndex(1)
+    ui.tabKontrol.tabBar().close()
+    ui.chckBox_Loglama.setChecked(True)
+    ui.listLoglama.setVisible(False)
+  
     ui.tabKontrol.setCurrentWidget(ui.tabKontrol.findChild(QWidget, "tab_Ayarlar"))
     
 #Buttonlar
 ui.pushBtnAyarlar.clicked.connect(btnAyarlar)
-    
+
 sys.exit(Uygulama.exec_())
