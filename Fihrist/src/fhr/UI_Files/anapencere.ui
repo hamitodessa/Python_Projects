@@ -92,6 +92,11 @@
         <property name="text">
          <string/>
         </property>
+        <property name="icon">
+         <iconset>
+          <normalon>../../../../ICONS/iconsSettings.png</normalon>
+         </iconset>
+        </property>
         <property name="iconSize">
          <size>
           <width>30</width>
