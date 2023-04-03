@@ -22,15 +22,21 @@ ui.setupUi(penAna)
 penAna.show()
 
 #
-#import Cal_Dizini.Baglan as bAGLAN
-#import Cal_Dizini.Baglan_Log as bAGLAN_LOG
-#bAGLAN.cONNECT("hamit");
-#bAGLAN_LOG.cONNECT();
+import Cal_Dizini.Baglan as bAGLAN
+import Cal_Dizini.Baglan_Log as bAGLAN_LOG
+bAGLAN.cONNECT("hamit")
+bAGLAN_LOG.cONNECT()
+
+print ("kull1=" +bAGLAN.cariDizin.kULLANICI)
+print ("kull2=" +bAGLAN.cariDizin.kOD)
+print ("kull3=" +bAGLAN.cariDizin.sERVER)
+print ("kull4=" +bAGLAN_LOG.cariLogDizin.cONN_STR)
+print ("kull5=" +bAGLAN_LOG.cariLogDizin.lOGLAMA_YERI)
 #
 
 
 
-glb.obs_dosya_olustur()
+#glb.obs_dosya_olustur()
 
 glb._Fihrist = glb.Ms_Sql
 glb._IFihrist_Loger = [glb.Maill,glb.Dao_MsSql,glb.Dao_MySql,glb.Dao_SqLite,glb.Dao_Txt]

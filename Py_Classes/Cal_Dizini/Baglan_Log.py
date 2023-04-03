@@ -22,7 +22,6 @@ fihLogDizin = DIZIN_BILGILERI()  # // Fihrist
     
 def cONNECT():
     b_OKU = Bilgi_Oku_Log()
-    print(BAGLAN.cariDizin.yER)
     b_OKU.bILGI_OKU(cariLogDizin,"OK_Car", BAGLAN.cariDizin);
     b_OKU.bILGI_OKU(kurLogDizin,"OK_Kur", BAGLAN.kurDizin);
     b_OKU.bILGI_OKU(fatLogDizin,"OK_Fat", BAGLAN.fatDizin);
@@ -32,4 +31,3 @@ def cONNECT():
     b_OKU.bILGI_OKU(smsLogDizin,"OK_Sms", BAGLAN.smsDizin);
     b_OKU.bILGI_OKU(fihLogDizin,"OK_Fih", BAGLAN.fihDizin);
    
- 

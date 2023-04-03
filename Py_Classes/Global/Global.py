@@ -91,5 +91,7 @@ def surucu_kontrol():
         obs_dosya_olustur
         #Tema_Cari.dosya_yap();
         #set_ilk()  //obs_set_olustur();
+def char_degis (degisken):
+        return degisken.replace(":","_");
             
     # do something
