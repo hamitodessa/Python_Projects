@@ -55,7 +55,11 @@ def btnAyarlar():
   
     ui.tabKontrol.setCurrentWidget(ui.tabKontrol.findChild(QWidget, "tab_Ayarlar"))
     
-#Buttonlar
+#-----------------BUTTONLAR------------------------------------*
 ui.pushBtnAyarlar.clicked.connect(btnAyarlar)
 
 sys.exit(Uygulama.exec_())
+
+
+
+
