@@ -19,7 +19,10 @@ Uygulama= QApplication(sys.argv)
 penAna = QMainWindow()
 ui= Ui_MainWindow()
 ui.setupUi(penAna)
+
+
 penAna.show()
+
 
 #
 import Cal_Dizini.Baglan as bAGLAN
@@ -42,4 +45,13 @@ glb._Fihrist = glb.Ms_Sql
 glb._IFihrist_Loger = [glb.Maill,glb.Dao_MsSql,glb.Dao_MySql,glb.Dao_SqLite,glb.Dao_Txt]
 fih = Fihrist_Access(glb._Fihrist,glb._IFihrist_Loger)
 fih.baglan("Deneme mesaji")
+
+def btnAyarlar():
+    print(ui.tabKontrol.currentIndex())
+    #ui.tabKontrol.setCurrentIndex(1)
+    ui.tabKontrol.setCurrentWidget(ui.tabKontrol.findChild(QWidget, "tab_Ayarlar"))
+    
+#Buttonlar
+ui.pushBtnAyarlar.clicked.connect(btnAyarlar)
+    
 sys.exit(Uygulama.exec_())
