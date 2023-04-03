@@ -22,7 +22,7 @@ class Bilgi_Oku:
                 dIZIN.kOD = row[1]
                 dIZIN.sERVER =  row[6]
                 dIZIN.kULLANICI = row[3] 
-                dIZIN.sIFRESI = sIFRELE.dCRYPT(row[4])
+                dIZIN.sIFRESI = row[4] #sIFRELE.dCRYPT(row[4])
                 dIZIN.yER = row[9]
                 dIZIN.iNSTANCE = row[5]
                 dIZIN.dIZIN_CINS = row[10]
