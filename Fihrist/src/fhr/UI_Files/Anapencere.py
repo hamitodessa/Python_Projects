@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import fhr.UI_Files.fih_resources
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -60,6 +60,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.tabKontrol = QtWidgets.QTabWidget(self.centralwidget)
+        self.tabKontrol.setStyleSheet("")
         self.tabKontrol.setDocumentMode(False)
         self.tabKontrol.setTabBarAutoHide(False)
         self.tabKontrol.setObjectName("tabKontrol")
@@ -86,20 +87,23 @@ class Ui_MainWindow(object):
         self.tab_Ayarlar.setObjectName("tab_Ayarlar")
         self.comboBox = QtWidgets.QComboBox(self.tab_Ayarlar)
         self.comboBox.setGeometry(QtCore.QRect(20, 30, 121, 31))
-        self.comboBox.setStyleSheet("font: 12pt \"Segoe UI\";")
+        self.comboBox.setStyleSheet("")
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.chckBox_Lokal = QtWidgets.QCheckBox(self.tab_Ayarlar)
         self.chckBox_Lokal.setGeometry(QtCore.QRect(180, 30, 76, 20))
+        self.chckBox_Lokal.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.chckBox_Lokal.setChecked(True)
+        self.chckBox_Lokal.setTristate(False)
         self.chckBox_Lokal.setObjectName("chckBox_Lokal")
         self.chckBox_Server = QtWidgets.QCheckBox(self.tab_Ayarlar)
         self.chckBox_Server.setGeometry(QtCore.QRect(180, 50, 76, 20))
         self.chckBox_Server.setObjectName("chckBox_Server")
         self.chckBox_Loglama = QtWidgets.QCheckBox(self.tab_Ayarlar)
         self.chckBox_Loglama.setGeometry(QtCore.QRect(290, 30, 75, 20))
+        self.chckBox_Loglama.setStyleSheet("")
         self.chckBox_Loglama.setObjectName("chckBox_Loglama")
         self.layoutWidget = QtWidgets.QWidget(self.tab_Ayarlar)
         self.layoutWidget.setGeometry(QtCore.QRect(20, 80, 231, 146))
@@ -112,10 +116,16 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(self.layoutWidget)
         self.label.setObjectName("label")
         self.horizontalLayout_5.addWidget(self.label)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_5.addItem(spacerItem1)
         self.lineEdit = QtWidgets.QLineEdit(self.layoutWidget)
         self.lineEdit.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.lineEdit.setStyleSheet("QLineEdit {\n"
+"    border: 2px solid gray;\n"
+"    border-radius: 10px;\n"
+"    padding: 0 8px;\n"
+"     selection-background-color: darkgray;\n"
+"}")
         self.lineEdit.setObjectName("lineEdit")
         self.horizontalLayout_5.addWidget(self.lineEdit)
         self.verticalLayout_6.addLayout(self.horizontalLayout_5)
@@ -124,9 +134,15 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(self.layoutWidget)
         self.label_2.setObjectName("label_2")
         self.horizontalLayout_6.addWidget(self.label_2)
-        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_6.addItem(spacerItem2)
         self.lineEdit_2 = QtWidgets.QLineEdit(self.layoutWidget)
+        self.lineEdit_2.setStyleSheet("QLineEdit {\n"
+"    border: 2px solid gray;\n"
+"    border-radius: 10px;\n"
+"    padding: 0 8px;\n"
+"     selection-background-color: darkgray;\n"
+"}")
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.horizontalLayout_6.addWidget(self.lineEdit_2)
         self.verticalLayout_6.addLayout(self.horizontalLayout_6)
@@ -135,9 +151,15 @@ class Ui_MainWindow(object):
         self.label_3 = QtWidgets.QLabel(self.layoutWidget)
         self.label_3.setObjectName("label_3")
         self.horizontalLayout_7.addWidget(self.label_3)
-        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_7.addItem(spacerItem3)
         self.txtServer = QtWidgets.QLineEdit(self.layoutWidget)
+        self.txtServer.setStyleSheet("QLineEdit {\n"
+"    border: 2px solid gray;\n"
+"    border-radius: 10px;\n"
+"    padding: 0 8px;\n"
+"     selection-background-color: darkgray;\n"
+"}")
         self.txtServer.setObjectName("txtServer")
         self.horizontalLayout_7.addWidget(self.txtServer)
         self.verticalLayout_6.addLayout(self.horizontalLayout_7)
@@ -146,9 +168,15 @@ class Ui_MainWindow(object):
         self.label_4 = QtWidgets.QLabel(self.layoutWidget)
         self.label_4.setObjectName("label_4")
         self.horizontalLayout_8.addWidget(self.label_4)
-        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_8.addItem(spacerItem4)
         self.lineEdit_4 = QtWidgets.QLineEdit(self.layoutWidget)
+        self.lineEdit_4.setStyleSheet("QLineEdit {\n"
+"    border: 2px solid gray;\n"
+"    border-radius: 10px;\n"
+"    padding: 0 8px;\n"
+"     selection-background-color: darkgray;\n"
+"}")
         self.lineEdit_4.setObjectName("lineEdit_4")
         self.horizontalLayout_8.addWidget(self.lineEdit_4)
         self.verticalLayout_6.addLayout(self.horizontalLayout_8)
@@ -157,37 +185,49 @@ class Ui_MainWindow(object):
         self.label_5 = QtWidgets.QLabel(self.layoutWidget)
         self.label_5.setObjectName("label_5")
         self.horizontalLayout_9.addWidget(self.label_5)
-        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_9.addItem(spacerItem5)
         self.lineEdit_5 = QtWidgets.QLineEdit(self.layoutWidget)
+        self.lineEdit_5.setStyleSheet("QLineEdit {\n"
+"    border: 2px solid gray;\n"
+"    border-radius: 10px;\n"
+"    padding: 0 8px;\n"
+"     selection-background-color: darkgray;\n"
+"}")
         self.lineEdit_5.setObjectName("lineEdit_5")
         self.horizontalLayout_9.addWidget(self.lineEdit_5)
         self.verticalLayout_6.addLayout(self.horizontalLayout_9)
         self.toolButton = QtWidgets.QToolButton(self.tab_Ayarlar)
-        self.toolButton.setGeometry(QtCore.QRect(130, 330, 22, 22))
+        self.toolButton.setGeometry(QtCore.QRect(20, 280, 31, 31))
+        self.toolButton.setMaximumSize(QtCore.QSize(32, 31))
         self.toolButton.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../../../../ICONS/icons8-up-down-arrow-16.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/newPrefix/icons8-up-down-arrow-16.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.toolButton.setIcon(icon)
         self.toolButton.setObjectName("toolButton")
-        self.widget = QtWidgets.QWidget(self.tab_Ayarlar)
-        self.widget.setGeometry(QtCore.QRect(290, 80, 111, 100))
-        self.widget.setObjectName("widget")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.widget)
+        self.layoutWidget1 = QtWidgets.QWidget(self.tab_Ayarlar)
+        self.layoutWidget1.setGeometry(QtCore.QRect(290, 80, 111, 71))
+        self.layoutWidget1.setObjectName("layoutWidget1")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.layoutWidget1)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.chckBox_Veritabani = QtWidgets.QCheckBox(self.widget)
+        self.chckBox_Veritabani = QtWidgets.QCheckBox(self.layoutWidget1)
         self.chckBox_Veritabani.setObjectName("chckBox_Veritabani")
         self.verticalLayout_3.addWidget(self.chckBox_Veritabani)
-        self.chckBox_SQLite = QtWidgets.QCheckBox(self.widget)
+        self.chckBox_SQLite = QtWidgets.QCheckBox(self.layoutWidget1)
         self.chckBox_SQLite.setObjectName("chckBox_SQLite")
         self.verticalLayout_3.addWidget(self.chckBox_SQLite)
-        self.chckBox_Text = QtWidgets.QCheckBox(self.widget)
+        self.chckBox_Text = QtWidgets.QCheckBox(self.layoutWidget1)
         self.chckBox_Text.setObjectName("chckBox_Text")
         self.verticalLayout_3.addWidget(self.chckBox_Text)
-        self.chckBox_Mail = QtWidgets.QCheckBox(self.widget)
+        self.chckBox_Mail = QtWidgets.QCheckBox(self.layoutWidget1)
         self.chckBox_Mail.setObjectName("chckBox_Mail")
         self.verticalLayout_3.addWidget(self.chckBox_Mail)
+        self.pushButton_4 = QtWidgets.QPushButton(self.tab_Ayarlar)
+        self.pushButton_4.setGeometry(QtCore.QRect(70, 280, 75, 24))
+        self.pushButton_4.setText("")
+        self.pushButton_4.setIcon(icon)
+        self.pushButton_4.setObjectName("pushButton_4")
         self.tabKontrol.addTab(self.tab_Ayarlar, "")
         self.horizontalLayout_3.addWidget(self.tabKontrol)
         self.verticalLayout.addLayout(self.horizontalLayout_3)

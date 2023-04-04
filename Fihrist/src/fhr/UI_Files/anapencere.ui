@@ -142,6 +142,9 @@
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
        <widget class="QTabWidget" name="tabKontrol">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <property name="currentIndex">
          <number>1</number>
         </property>
@@ -195,7 +198,7 @@
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+           <string notr="true"/>
           </property>
           <item>
            <property name="text">
@@ -222,11 +225,17 @@
             <height>20</height>
            </rect>
           </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
           <property name="text">
            <string>Lokal</string>
           </property>
           <property name="checked">
            <bool>true</bool>
+          </property>
+          <property name="tristate">
+           <bool>false</bool>
           </property>
          </widget>
          <widget class="QCheckBox" name="chckBox_Server">
@@ -250,6 +259,9 @@
             <width>75</width>
             <height>20</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>Loglama</string>
@@ -279,6 +291,9 @@
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
                <property name="sizeHint" stdset="0">
                 <size>
                  <width>40</width>
@@ -294,6 +309,14 @@
                  <width>60</width>
                  <height>16777215</height>
                 </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+     selection-background-color: darkgray;
+}</string>
                </property>
               </widget>
              </item>
@@ -313,6 +336,9 @@
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
                <property name="sizeHint" stdset="0">
                 <size>
                  <width>40</width>
@@ -322,7 +348,16 @@
               </spacer>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_2"/>
+              <widget class="QLineEdit" name="lineEdit_2">
+               <property name="styleSheet">
+                <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+     selection-background-color: darkgray;
+}</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
@@ -340,6 +375,9 @@
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
                <property name="sizeHint" stdset="0">
                 <size>
                  <width>40</width>
@@ -349,7 +387,16 @@
               </spacer>
              </item>
              <item>
-              <widget class="QLineEdit" name="txtServer"/>
+              <widget class="QLineEdit" name="txtServer">
+               <property name="styleSheet">
+                <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+     selection-background-color: darkgray;
+}</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
@@ -367,6 +414,9 @@
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
                <property name="sizeHint" stdset="0">
                 <size>
                  <width>40</width>
@@ -376,7 +426,16 @@
               </spacer>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_4"/>
+              <widget class="QLineEdit" name="lineEdit_4">
+               <property name="styleSheet">
+                <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+     selection-background-color: darkgray;
+}</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
@@ -394,6 +453,9 @@
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
                <property name="sizeHint" stdset="0">
                 <size>
                  <width>40</width>
@@ -403,7 +465,16 @@
               </spacer>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_5"/>
+              <widget class="QLineEdit" name="lineEdit_5">
+               <property name="styleSheet">
+                <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+     selection-background-color: darkgray;
+}</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
@@ -412,27 +483,33 @@
          <widget class="QToolButton" name="toolButton">
           <property name="geometry">
            <rect>
-            <x>130</x>
-            <y>330</y>
-            <width>22</width>
-            <height>22</height>
+            <x>20</x>
+            <y>280</y>
+            <width>31</width>
+            <height>31</height>
            </rect>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>32</width>
+            <height>31</height>
+           </size>
           </property>
           <property name="text">
            <string/>
           </property>
           <property name="icon">
-           <iconset>
-            <normaloff>../../../../ICONS/icons8-up-down-arrow-16.png</normaloff>../../../../ICONS/icons8-up-down-arrow-16.png</iconset>
+           <iconset resource="fih_resources.qrc">
+            <normaloff>:/newPrefix/icons8-up-down-arrow-16.png</normaloff>:/newPrefix/icons8-up-down-arrow-16.png</iconset>
           </property>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>290</x>
             <y>80</y>
             <width>111</width>
-            <height>100</height>
+            <height>71</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -466,6 +543,23 @@
            </item>
           </layout>
          </widget>
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>280</y>
+            <width>75</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="fih_resources.qrc">
+            <normaloff>:/newPrefix/icons8-up-down-arrow-16.png</normaloff>:/newPrefix/icons8-up-down-arrow-16.png</iconset>
+          </property>
+         </widget>
         </widget>
        </widget>
       </item>
@@ -475,6 +569,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="fih_resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
