@@ -206,7 +206,7 @@ class Ui_MainWindow(object):
         self.toolButton.setIcon(icon)
         self.toolButton.setObjectName("toolButton")
         self.layoutWidget1 = QtWidgets.QWidget(self.tab_Ayarlar)
-        self.layoutWidget1.setGeometry(QtCore.QRect(290, 80, 111, 71))
+        self.layoutWidget1.setGeometry(QtCore.QRect(290, 80, 111, 100))
         self.layoutWidget1.setObjectName("layoutWidget1")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.layoutWidget1)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
