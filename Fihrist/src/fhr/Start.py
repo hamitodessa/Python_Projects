@@ -50,14 +50,39 @@ def btnAyarlar():
     print(ui.tabKontrol.currentIndex())
     #ui.tabKontrol.setCurrentIndex(1)
     ui.tabKontrol.tabBar().close()
-    ui.chckBox_Loglama.setChecked(True)
-    ui.listLoglama.setVisible(False)
-  
     ui.tabKontrol.setCurrentWidget(ui.tabKontrol.findChild(QWidget, "tab_Ayarlar"))
+def chckBox_Lokal_Checked():
+    if ui.chckBox_Lokal.isChecked() :
+        ui.chckBox_Server.setChecked(False)
+        ui.txtServer.setEnabled(False)
+    else:
+        ui.chckBox_Server.setChecked(True)
+def chckBox_Server_Checked():
+    if ui.chckBox_Server.isChecked() :
+        ui.chckBox_Lokal.setChecked(False)
+        ui.txtServer.setEnabled(True)
+    else:
+        ui.chckBox_Lokal.setChecked(True)
+def chckBox_Loglama_Checked():
+    if ui.chckBox_Loglama.isChecked() :
+        ui.chckBox_Veritabani.setVisible(True)
+        ui.chckBox_SQLite.setVisible(True)
+        ui.chckBox_Text.setVisible(True)
+        ui.chckBox_Mail.setVisible(True)
+    else:
+        ui.chckBox_Veritabani.setVisible(False)
+        ui.chckBox_SQLite.setVisible(False)
+        ui.chckBox_Text.setVisible(False)
+        ui.chckBox_Mail.setVisible(False)
+
+        
+    
     
 #-----------------BUTTONLAR------------------------------------*
 ui.pushBtnAyarlar.clicked.connect(btnAyarlar)
-
+ui.chckBox_Lokal.stateChanged.connect(chckBox_Lokal_Checked)
+ui.chckBox_Server.stateChanged.connect(chckBox_Server_Checked)
+ui.chckBox_Loglama.stateChanged.connect(chckBox_Loglama_Checked)
 sys.exit(Uygulama.exec_())
 
 

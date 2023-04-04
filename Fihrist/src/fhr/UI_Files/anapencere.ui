@@ -190,12 +190,12 @@
            <rect>
             <x>20</x>
             <y>30</y>
-            <width>101</width>
-            <height>20</height>
+            <width>121</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;</string>
+           <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
           </property>
           <item>
            <property name="text">
@@ -213,7 +213,7 @@
            </property>
           </item>
          </widget>
-         <widget class="QCheckBox" name="checkBox">
+         <widget class="QCheckBox" name="chckBox_Lokal">
           <property name="geometry">
            <rect>
             <x>180</x>
@@ -229,7 +229,7 @@
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QCheckBox" name="checkBox_2">
+         <widget class="QCheckBox" name="chckBox_Server">
           <property name="geometry">
            <rect>
             <x>180</x>
@@ -255,94 +255,13 @@
            <string>Loglama</string>
           </property>
          </widget>
-         <widget class="QListWidget" name="listLoglama">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="geometry">
-           <rect>
-            <x>290</x>
-            <y>80</y>
-            <width>201</width>
-            <height>211</height>
-           </rect>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::NoSelection</enum>
-          </property>
-          <property name="viewMode">
-           <enum>QListView::ListMode</enum>
-          </property>
-          <item>
-           <property name="text">
-            <string>Veritabani</string>
-           </property>
-           <property name="checkState">
-            <enum>Unchecked</enum>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>SQ Lite</string>
-           </property>
-           <property name="checkState">
-            <enum>Unchecked</enum>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Text</string>
-           </property>
-           <property name="checkState">
-            <enum>Unchecked</enum>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Mail</string>
-           </property>
-           <property name="checkState">
-            <enum>Unchecked</enum>
-           </property>
-          </item>
-         </widget>
-         <widget class="QPushButton" name="pushButton_4">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>330</y>
-            <width>91</width>
-            <height>24</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>../../../../ICONS/icons8-ftp-16.png</normaloff>../../../../ICONS/icons8-ftp-16.png</iconset>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="pushButton_6">
-          <property name="geometry">
-           <rect>
-            <x>120</x>
-            <y>330</y>
-            <width>75</width>
-            <height>24</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>PushButton</string>
-          </property>
-         </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>20</x>
             <y>80</y>
             <width>231</width>
-            <height>221</height>
+            <height>146</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -430,7 +349,7 @@
               </spacer>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_3"/>
+              <widget class="QLineEdit" name="txtServer"/>
              </item>
             </layout>
            </item>
@@ -487,6 +406,63 @@
               <widget class="QLineEdit" name="lineEdit_5"/>
              </item>
             </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QToolButton" name="toolButton">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>330</y>
+            <width>22</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>../../../../ICONS/icons8-up-down-arrow-16.png</normaloff>../../../../ICONS/icons8-up-down-arrow-16.png</iconset>
+          </property>
+         </widget>
+         <widget class="QWidget" name="">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>80</y>
+            <width>111</width>
+            <height>100</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QCheckBox" name="chckBox_Veritabani">
+             <property name="text">
+              <string>Veritabani</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="chckBox_SQLite">
+             <property name="text">
+              <string>SQ Lite</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="chckBox_Text">
+             <property name="text">
+              <string>Text</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="chckBox_Mail">
+             <property name="text">
+              <string>Mail</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </widget>
