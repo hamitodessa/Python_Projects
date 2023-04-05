@@ -14,7 +14,11 @@ class Cari_Access():
         for qwe in self._ICari:
             qwe.connect(self)
         for qwe in self.listee:
-            qwe.connect(self,mesaj)
+            #if qwe.__class__.__name__ == "Dosya_Yaz":
+            #    qwe.connect(self,mesaj)
+            #else:
+                qwe.connect(self,mesaj)
+                
         
        
        

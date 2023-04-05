@@ -4,8 +4,8 @@ Created on Apr 5, 2023
 @author: hamit
 '''
 
-from pt.Loglama.Ilog_kayit_Interface import LogKayitInterface
 
+from pt.Loglama.Ilog_kayit_Interface import LogKayitInterface
 
 
 class lg_kayitMssql(LogKayitInterface):
