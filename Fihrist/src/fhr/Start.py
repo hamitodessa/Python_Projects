@@ -14,6 +14,8 @@ from Global import Global  as glb
 from fh.Access_DB import Fihrist_Access 
 
 from fhr.UI_Files.Anapencere import *
+import Cal_Dizini.Baglan as bAGLAN
+import Cal_Dizini.Baglan_Log as bAGLAN_LOG
 
 Uygulama= QApplication(sys.argv)
 penAna = QMainWindow()
@@ -21,21 +23,7 @@ ui= Ui_MainWindow()
 ui.setupUi(penAna)
 
 
-penAna.show()
 
-
-#
-import Cal_Dizini.Baglan as bAGLAN
-import Cal_Dizini.Baglan_Log as bAGLAN_LOG
-bAGLAN.cONNECT("hamit")
-bAGLAN_LOG.cONNECT()
-
-print ("kull1=" +bAGLAN.cariDizin.kULLANICI)
-print ("kull2=" +bAGLAN.cariDizin.kOD)
-print ("kull3=" +bAGLAN.cariDizin.sERVER)
-print ("kull4=" +bAGLAN_LOG.cariLogDizin.cONN_STR)
-print ("kull5=" +bAGLAN_LOG.cariLogDizin.mODULADI)
-#
 
 
 
@@ -46,6 +34,22 @@ glb._IFihrist_Loger = [glb.Maill,glb.Dao_MsSql,glb.Dao_MySql,glb.Dao_SqLite,glb.
 fih = Fihrist_Access(glb._Fihrist,glb._IFihrist_Loger)
 fih.baglan("Deneme mesaji")
 
+def dizin_kontrol():
+    import os
+    isExist =os.path.isfile(glb.SURUCU + glb.OBS_DOSYA)
+    if isExist:
+        #Dosya var
+        print("dos var")
+        bAGLAN.cONNECT("hamit")
+        bAGLAN_LOG.cONNECT()
+        print ("kull1=" +bAGLAN.cariDizin.kULLANICI)
+        print ("kull2=" +bAGLAN.cariDizin.kOD)
+        print ("kull3=" +bAGLAN.cariDizin.sERVER)
+        print ("kull4=" +bAGLAN_LOG.cariLogDizin.cONN_STR)
+        print ("kull5=" +bAGLAN_LOG.cariLogDizin.mODULADI)
+    else:
+        glb.surucu_kontrol()
+    
 def btnAyarlar():
     print(ui.tabKontrol.currentIndex())
     #ui.tabKontrol.setCurrentIndex(1)
@@ -77,12 +81,21 @@ def chckBox_Loglama_Checked():
 
         
     
-    
+
+#*************************** Kontrol ***********************
+dizin_kontrol()
+#***********************************************************
+  
 #-----------------BUTTONLAR------------------------------------*
 ui.pushBtnAyarlar.clicked.connect(btnAyarlar)
 ui.chckBox_Lokal.stateChanged.connect(chckBox_Lokal_Checked)
 ui.chckBox_Server.stateChanged.connect(chckBox_Server_Checked)
 ui.chckBox_Loglama.stateChanged.connect(chckBox_Loglama_Checked)
+
+
+penAna.show()
+
+
 sys.exit(Uygulama.exec_())
 
 
