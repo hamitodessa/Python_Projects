@@ -12,6 +12,6 @@ class Dosya_Yaz(ILogerr):
     def __init__(self, ILogerr,mesaj):
         self.mesaj = mesaj
         self.listee= ILogerr
-    def connect(self):
+    def logla(self):
         for qwe in self.listee:
             qwe.logla(self,self.mesaj)
