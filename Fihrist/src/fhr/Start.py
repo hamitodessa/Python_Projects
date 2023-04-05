@@ -29,7 +29,7 @@ ui.setupUi(penAna)
 
 #glb.obs_dosya_olustur()
 
-glb._Fihrist = [glb.Ms_Sql]
+glb._Fihrist = [glb.Ms_Sql,glb.MySql]
 glb._IFihrist_Loger = [glb.Maill,glb.Dao_MsSql,glb.Dao_MySql,glb.Dao_SqLite,glb.Dao_Txt]
 fih = Fihrist_Access(glb._Fihrist,glb._IFihrist_Loger)
 fih.baglan("Deneme mesaji")
@@ -44,7 +44,7 @@ def dizin_kontrol():
         print("dos var")
         bAGLAN.cONNECT("hamit")
         bAGLAN_LOG.cONNECT()
-        print ("kull1=" +bAGLAN.cariDizin.kULLANICI)
+        print ("kull1=" +bAGLAN.fihDizin.kULLANICI)
         print ("kull2=" +bAGLAN.cariDizin.kOD)
         print ("kull3=" +bAGLAN.cariDizin.sERVER)
         print ("kull4=" +bAGLAN_LOG.cariLogDizin.cONN_STR)

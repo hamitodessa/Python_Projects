@@ -19,7 +19,6 @@ from lg.lg_kayit.Dao_MsSql    import  Dao_MsSql
 from lg.lg_kayit.Dao_MySql    import  Dao_MySql
 from lg.lg_kayit.Dao_SqLite    import  Dao_SqLite
 from lg.lg_kayit.Dao_Txt import Dao_Txt
-from lg.Dao_Dosya_Yaz import Dosya_Yaz
 
 #Veritabani Dosyalari
 import sqlite3

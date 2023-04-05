@@ -7,7 +7,7 @@ from lg.lg_kayit.ILog_Kayit import ILogKayitInterface
 
 class Dao_MySql(ILogKayitInterface):
     def logla(self,mesaj):
-        print('Connecting to Log MySql Database...')
+        print('Connecting to Log MySql Database...'+ mesaj)
     def log_rapor(self):
         print('Connecting to MySql Database...')
     
