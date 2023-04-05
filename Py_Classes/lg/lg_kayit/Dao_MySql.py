@@ -3,11 +3,11 @@ Created on Apr 1, 2023
 
 @author: hamit
 '''
-from lg.ILoger import ILogerr
+from lg.lg_kayit.ILog_Kayit import ILogKayitInterface
 
-class Dao_MySql(ILogerr):
+class Dao_MySql(ILogKayitInterface):
     def logla(self,mesaj):
-        print('Connecting to MySql Database...')
+        print('Connecting to Log MySql Database...')
     def log_rapor(self):
         print('Connecting to MySql Database...')
     

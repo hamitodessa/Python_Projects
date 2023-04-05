@@ -29,10 +29,12 @@ ui.setupUi(penAna)
 
 #glb.obs_dosya_olustur()
 
-glb._Fihrist = glb.Ms_Sql
+glb._Fihrist = [glb.Ms_Sql]
 glb._IFihrist_Loger = [glb.Maill,glb.Dao_MsSql,glb.Dao_MySql,glb.Dao_SqLite,glb.Dao_Txt]
 fih = Fihrist_Access(glb._Fihrist,glb._IFihrist_Loger)
 fih.baglan("Deneme mesaji")
+
+
 
 def dizin_kontrol():
     import os

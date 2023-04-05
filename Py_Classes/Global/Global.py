@@ -15,10 +15,11 @@ from fh.Dao_MsSql   import  Ms_Sql
 from fh.Dao_MySql   import  MySql
 #Loglama Yontemleri
 from lg.Dao_Mail_At    import  Maill
-from lg.Dao_MsSql    import  Dao_MsSql
-from lg.Dao_MySql    import  Dao_MySql
-from lg.Dao_SqLite    import  Dao_SqLite
-from lg.Dao_Txt    import  Dao_Txt
+from lg.lg_kayit.Dao_MsSql    import  Dao_MsSql
+from lg.lg_kayit.Dao_MySql    import  Dao_MySql
+from lg.lg_kayit.Dao_SqLite    import  Dao_SqLite
+from lg.lg_kayit.Dao_Txt import Dao_Txt
+from lg.lg_kayit.Dao_Dosya_Yaz import Dosya_Yaz
 
 #Veritabani Dosyalari
 import sqlite3
