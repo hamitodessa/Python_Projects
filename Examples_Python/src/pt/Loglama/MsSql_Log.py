@@ -9,7 +9,7 @@ from pt.Loglama.Ilog_kayit_Interface import LogKayitInterface
 
 
 class lg_kayitMssql(LogKayitInterface):
-   def connect(self):
-       print('Connecting to Loglama Kayit Mssql Database...')
-   def disconnect(self):
-       print('Disconnecting to Loglama Kayit Mssql Database....')
+    def connect(self,mesaj):
+        print('Connecting to Loglama Kayit Mssql Database...' + mesaj)
+    def disconnect(self):
+        print('Disconnecting to Loglama Kayit Mssql Database....')

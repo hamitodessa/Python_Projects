@@ -9,7 +9,7 @@ from pt.Loglama.Ilog_kayit_Interface import LogKayitInterface
 
 
 class sq_lite(LogKayitInterface):
-   def connect(self):
-       print('Connecting to sq liteDatabase...')
-   def disconnect(self):
-       print('Disconnecting to sq lite Database....')
+    def connect(self,mesaj):
+        print('Connecting to sq lite Loglama Kayit ...' + mesaj)
+    def disconnect(self):
+        print('Disconnecting to sq lite Loglama Kayit....')

@@ -7,12 +7,8 @@ import Degiskenler as dgs
 from DataAccess import Cari_Access 
 
 chsp = Cari_Access(dgs.classname,dgs.lgcls)
-chsp.sil("Silindi")
+chsp.connect("Silindi mi acep")
 
-
-#classname = dgs.classname
-#clsnm = dgs.lgcls
-#chsp.kaydet(classname, clsnm)
 
 
 
