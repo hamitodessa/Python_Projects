@@ -29,10 +29,10 @@ ui.setupUi(penAna)
 
 #glb.obs_dosya_olustur()
 
-glb._Fihrist = [glb.Ms_Sql,glb.MySql]
-glb._IFihrist_Loger = [glb.Maill,glb.Dao_MsSql,glb.Dao_MySql,glb.Dao_SqLite,glb.Dao_Txt]
-fih = Fihrist_Access(glb._Fihrist,glb._IFihrist_Loger)
-fih.baglan("Deneme mesaji")
+#glb._Fihrist = [glb.Ms_Sql,glb.MySql]
+#glb._IFihrist_Loger = [glb.Maill,glb.Dao_MsSql,glb.Dao_MySql,glb.Dao_SqLite,glb.Dao_Txt]
+#fih = Fihrist_Access(glb._Fihrist,glb._IFihrist_Loger)
+#fih.baglan("Deneme mesaji")
 
 
 
@@ -44,18 +44,64 @@ def dizin_kontrol():
         bAGLAN.cONNECT("hamit")
         bAGLAN_LOG.cONNECT()
         if bAGLAN.fihDizin.kULLANICI == "":
-            print("kod bos")
             loglama_kapat()
             btnAyarlar()
         else:
-            print ("kull1=" +bAGLAN.fihDizin.kULLANICI)
-            print ("kull2=" +bAGLAN.cariDizin.kOD)
-            print ("kull3=" +bAGLAN.cariDizin.sERVER)
-            print ("kull4=" +bAGLAN_LOG.cariLogDizin.cONN_STR)
-            print ("kull5=" +bAGLAN_LOG.cariLogDizin.mODULADI)
+            pass
+            #print ("kull1=" +bAGLAN.fihDizin.kULLANICI)
+            #print ("kull2=" +bAGLAN.cariDizin.kOD)
+            #print ("kull3=" +bAGLAN.cariDizin.sERVER)
+            #print ("kull4=" +bAGLAN_LOG.cariLogDizin.cONN_STR)
+            #print ("kull5=" +bAGLAN_LOG.cariLogDizin.mODULADI)
     else:
         glb.fih_surucu_kontrol()
-    
+
+def server_kontrol():
+    try:
+        conn_aktar()
+        
+        if ui.chckBox_Lokal.isChecked() :
+            if not ui.txtInstance.text():
+                return
+            if not ui.txtKullanici.text():
+                return
+            if not ui.txtSifre.text():
+                return
+            if not ui.txtServer.text():
+                return
+            from Server_Baglan.Connect import Connect
+            conn = Connect(glb._IConn)
+            
+            sonuc =  conn.Server_kontrol_L(ui.txtInstance.text(), ui.txtKullanici.text(),  ui.txtSifre.text(), ui.txtServer.text())
+            print(sonuc)
+            if  sonuc :
+                print("Baglandi")
+            else:
+                from tkinter import messagebox
+                messagebox.showwarning("Server Baglanti", "Baglanti Saglanamadi........")
+                #btnNewButton_1.setEnabled(false);
+              
+        else: # Server Control
+            pass
+    except Exception as e:
+    # Just print(e) is cleaner and more likely what you want,
+    # but if you insist on printing message specifically whenever possible...
+        if hasattr(e, 'message'):
+            print(e.message)
+        else:
+            print(e)
+def conn_aktar():
+    hangi = ui.comboBox.currentText()
+    from  Server_Baglan.OBS_Ortak_MsSql import Obs_Ortak_MsSql
+    from  Server_Baglan.OBS_Ortak_MySql import Obs_Ortak_MySql
+    from  Server_Baglan.OBS_Ortak_SqLite import Obs_Ortak_SqLite
+    if hangi == "Ms Sql":
+        glb._IConn = Obs_Ortak_MsSql
+    elif hangi == "My Sql":
+        glb._IConn = Obs_Ortak_MySql
+    elif hangi == "Sq Lite":
+        glb._IConn = Obs_Ortak_SqLite
+   
 def btnAyarlar():
     #print(ui.tabKontrol.currentIndex())
     #ui.tabKontrol.setCurrentIndex(1)
@@ -98,7 +144,7 @@ ui.pushBtnAyarlar.clicked.connect(btnAyarlar)
 ui.chckBox_Lokal.stateChanged.connect(chckBox_Lokal_Checked)
 ui.chckBox_Server.stateChanged.connect(chckBox_Server_Checked)
 ui.chckBox_Loglama.stateChanged.connect(chckBox_Loglama_Checked)
-
+ui.btnBaglan.clicked.connect(server_kontrol)
 
 penAna.show()
 

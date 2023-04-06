@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import fhr.UI_Files.fih_resources
 
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -247,15 +248,15 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.addWidget(self.label_2)
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_6.addItem(spacerItem2)
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.layoutWidget)
-        self.lineEdit_2.setStyleSheet("QLineEdit {\n"
+        self.txtInstance = QtWidgets.QLineEdit(self.layoutWidget)
+        self.txtInstance.setStyleSheet("QLineEdit {\n"
 "    border: 2px solid gray;\n"
 "    border-radius: 10px;\n"
 "    padding: 0 8px;\n"
 "     selection-background-color: darkgray;\n"
 "}")
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.horizontalLayout_6.addWidget(self.lineEdit_2)
+        self.txtInstance.setObjectName("txtInstance")
+        self.horizontalLayout_6.addWidget(self.txtInstance)
         self.verticalLayout_6.addLayout(self.horizontalLayout_6)
         self.horizontalLayout_7 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
@@ -281,15 +282,15 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8.addWidget(self.label_4)
         spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_8.addItem(spacerItem4)
-        self.lineEdit_4 = QtWidgets.QLineEdit(self.layoutWidget)
-        self.lineEdit_4.setStyleSheet("QLineEdit {\n"
+        self.txtKullanici = QtWidgets.QLineEdit(self.layoutWidget)
+        self.txtKullanici.setStyleSheet("QLineEdit {\n"
 "    border: 2px solid gray;\n"
 "    border-radius: 10px;\n"
 "    padding: 0 8px;\n"
 "     selection-background-color: darkgray;\n"
 "}")
-        self.lineEdit_4.setObjectName("lineEdit_4")
-        self.horizontalLayout_8.addWidget(self.lineEdit_4)
+        self.txtKullanici.setObjectName("txtKullanici")
+        self.horizontalLayout_8.addWidget(self.txtKullanici)
         self.verticalLayout_6.addLayout(self.horizontalLayout_8)
         self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_9.setObjectName("horizontalLayout_9")
@@ -298,15 +299,15 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.addWidget(self.label_5)
         spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_9.addItem(spacerItem5)
-        self.lineEdit_5 = QtWidgets.QLineEdit(self.layoutWidget)
-        self.lineEdit_5.setStyleSheet("QLineEdit {\n"
+        self.txtSifre = QtWidgets.QLineEdit(self.layoutWidget)
+        self.txtSifre.setStyleSheet("QLineEdit {\n"
 "    border: 2px solid gray;\n"
 "    border-radius: 10px;\n"
 "    padding: 0 8px;\n"
 "     selection-background-color: darkgray;\n"
 "}")
-        self.lineEdit_5.setObjectName("lineEdit_5")
-        self.horizontalLayout_9.addWidget(self.lineEdit_5)
+        self.txtSifre.setObjectName("txtSifre")
+        self.horizontalLayout_9.addWidget(self.txtSifre)
         self.verticalLayout_6.addLayout(self.horizontalLayout_9)
         self.layoutWidget1 = QtWidgets.QWidget(self.tab_Ayarlar)
         self.layoutWidget1.setGeometry(QtCore.QRect(290, 80, 111, 100))
@@ -326,13 +327,13 @@ class Ui_MainWindow(object):
         self.chckBox_Mail = QtWidgets.QCheckBox(self.layoutWidget1)
         self.chckBox_Mail.setObjectName("chckBox_Mail")
         self.verticalLayout_3.addWidget(self.chckBox_Mail)
-        self.widget = QtWidgets.QWidget(self.tab_Ayarlar)
-        self.widget.setGeometry(QtCore.QRect(20, 270, 254, 28))
-        self.widget.setObjectName("widget")
-        self.horizontalLayout_10 = QtWidgets.QHBoxLayout(self.widget)
+        self.layoutWidget2 = QtWidgets.QWidget(self.tab_Ayarlar)
+        self.layoutWidget2.setGeometry(QtCore.QRect(20, 270, 254, 28))
+        self.layoutWidget2.setObjectName("layoutWidget2")
+        self.horizontalLayout_10 = QtWidgets.QHBoxLayout(self.layoutWidget2)
         self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
-        self.btnBaglan = QtWidgets.QPushButton(self.widget)
+        self.btnBaglan = QtWidgets.QPushButton(self.layoutWidget2)
         self.btnBaglan.setMinimumSize(QtCore.QSize(37, 18))
         self.btnBaglan.setText("")
         icon = QtGui.QIcon()
@@ -340,7 +341,7 @@ class Ui_MainWindow(object):
         self.btnBaglan.setIcon(icon)
         self.btnBaglan.setObjectName("btnBaglan")
         self.horizontalLayout_10.addWidget(self.btnBaglan)
-        self.btnVeritabani = QtWidgets.QPushButton(self.widget)
+        self.btnVeritabani = QtWidgets.QPushButton(self.layoutWidget2)
         self.btnVeritabani.setMinimumSize(QtCore.QSize(37, 18))
         self.btnVeritabani.setText("")
         icon1 = QtGui.QIcon()
@@ -348,7 +349,7 @@ class Ui_MainWindow(object):
         self.btnVeritabani.setIcon(icon1)
         self.btnVeritabani.setObjectName("btnVeritabani")
         self.horizontalLayout_10.addWidget(self.btnVeritabani)
-        self.btnSil = QtWidgets.QPushButton(self.widget)
+        self.btnSil = QtWidgets.QPushButton(self.layoutWidget2)
         self.btnSil.setMinimumSize(QtCore.QSize(37, 18))
         self.btnSil.setText("")
         icon2 = QtGui.QIcon()
@@ -356,7 +357,7 @@ class Ui_MainWindow(object):
         self.btnSil.setIcon(icon2)
         self.btnSil.setObjectName("btnSil")
         self.horizontalLayout_10.addWidget(self.btnSil)
-        self.btnEkle = QtWidgets.QPushButton(self.widget)
+        self.btnEkle = QtWidgets.QPushButton(self.layoutWidget2)
         self.btnEkle.setMinimumSize(QtCore.QSize(37, 18))
         self.btnEkle.setText("")
         icon3 = QtGui.QIcon()
@@ -364,7 +365,7 @@ class Ui_MainWindow(object):
         self.btnEkle.setIcon(icon3)
         self.btnEkle.setObjectName("btnEkle")
         self.horizontalLayout_10.addWidget(self.btnEkle)
-        self.btnKaydet = QtWidgets.QPushButton(self.widget)
+        self.btnKaydet = QtWidgets.QPushButton(self.layoutWidget2)
         self.btnKaydet.setMinimumSize(QtCore.QSize(37, 18))
         self.btnKaydet.setText("")
         icon4 = QtGui.QIcon()
@@ -372,7 +373,7 @@ class Ui_MainWindow(object):
         self.btnKaydet.setIcon(icon4)
         self.btnKaydet.setObjectName("btnKaydet")
         self.horizontalLayout_10.addWidget(self.btnKaydet)
-        self.brnCikis = QtWidgets.QPushButton(self.widget)
+        self.brnCikis = QtWidgets.QPushButton(self.layoutWidget2)
         self.brnCikis.setMinimumSize(QtCore.QSize(37, 18))
         self.brnCikis.setText("")
         icon5 = QtGui.QIcon()
@@ -409,17 +410,23 @@ class Ui_MainWindow(object):
         self.tabKontrol.setTabText(self.tabKontrol.indexOf(self.tab), _translate("MainWindow", "Kisiler"))
         self.comboBox.setItemText(0, _translate("MainWindow", "Ms Sql"))
         self.comboBox.setItemText(1, _translate("MainWindow", "My Sql"))
-        self.comboBox.setItemText(2, _translate("MainWindow", "SQ Lite"))
+        self.comboBox.setItemText(2, _translate("MainWindow", "Sq Lite"))
         self.chckBox_Lokal.setText(_translate("MainWindow", "Lokal"))
         self.chckBox_Server.setText(_translate("MainWindow", "Server"))
         self.chckBox_Loglama.setText(_translate("MainWindow", "Loglama"))
         self.label.setText(_translate("MainWindow", "Kodu"))
+        self.lineEdit.setText(_translate("MainWindow", "019"))
         self.label_2.setText(_translate("MainWindow", "Instance"))
+        self.txtInstance.setText(_translate("MainWindow", "SQLEXPRESS"))
         self.label_3.setText(_translate("MainWindow", "Server"))
+        self.txtServer.setText(_translate("MainWindow", "localhost"))
         self.label_4.setText(_translate("MainWindow", "Kullanici"))
+        self.txtKullanici.setText(_translate("MainWindow", "sa"))
         self.label_5.setText(_translate("MainWindow", "Sifre"))
+        self.txtSifre.setText(_translate("MainWindow", "197227oOk"))
         self.chckBox_Veritabani.setText(_translate("MainWindow", "Veritabani"))
         self.chckBox_SQLite.setText(_translate("MainWindow", "SQ Lite"))
         self.chckBox_Text.setText(_translate("MainWindow", "Text"))
         self.chckBox_Mail.setText(_translate("MainWindow", "Mail"))
         self.tabKontrol.setTabText(self.tabKontrol.indexOf(self.tab_Ayarlar), _translate("MainWindow", "Ayarlar"))
+

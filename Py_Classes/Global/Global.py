@@ -26,6 +26,7 @@ import sqlite3
 conn = None
 curs = None
 #
+_IConn = None
 _ICar = None
 _IStok = None
 _IKur = None

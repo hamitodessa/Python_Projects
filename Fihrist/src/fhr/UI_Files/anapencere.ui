@@ -259,7 +259,7 @@ QDialogButtonBox {
          <string notr="true"/>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <property name="documentMode">
          <bool>false</bool>
@@ -325,7 +325,7 @@ QDialogButtonBox {
           </item>
           <item>
            <property name="text">
-            <string>SQ Lite</string>
+            <string>Sq Lite</string>
            </property>
           </item>
          </widget>
@@ -431,6 +431,9 @@ QDialogButtonBox {
      selection-background-color: darkgray;
 }</string>
                </property>
+               <property name="text">
+                <string>019</string>
+               </property>
               </widget>
              </item>
             </layout>
@@ -461,7 +464,7 @@ QDialogButtonBox {
               </spacer>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_2">
+              <widget class="QLineEdit" name="txtInstance">
                <property name="styleSheet">
                 <string notr="true">QLineEdit {
     border: 2px solid gray;
@@ -469,6 +472,9 @@ QDialogButtonBox {
     padding: 0 8px;
      selection-background-color: darkgray;
 }</string>
+               </property>
+               <property name="text">
+                <string>SQLEXPRESS</string>
                </property>
               </widget>
              </item>
@@ -509,6 +515,9 @@ QDialogButtonBox {
      selection-background-color: darkgray;
 }</string>
                </property>
+               <property name="text">
+                <string>localhost</string>
+               </property>
               </widget>
              </item>
             </layout>
@@ -539,7 +548,7 @@ QDialogButtonBox {
               </spacer>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_4">
+              <widget class="QLineEdit" name="txtKullanici">
                <property name="styleSheet">
                 <string notr="true">QLineEdit {
     border: 2px solid gray;
@@ -547,6 +556,9 @@ QDialogButtonBox {
     padding: 0 8px;
      selection-background-color: darkgray;
 }</string>
+               </property>
+               <property name="text">
+                <string>sa</string>
                </property>
               </widget>
              </item>
@@ -578,7 +590,7 @@ QDialogButtonBox {
               </spacer>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_5">
+              <widget class="QLineEdit" name="txtSifre">
                <property name="styleSheet">
                 <string notr="true">QLineEdit {
     border: 2px solid gray;
@@ -586,6 +598,9 @@ QDialogButtonBox {
     padding: 0 8px;
      selection-background-color: darkgray;
 }</string>
+               </property>
+               <property name="text">
+                <string>197227oOk</string>
                </property>
               </widget>
              </item>
@@ -633,7 +648,7 @@ QDialogButtonBox {
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>20</x>

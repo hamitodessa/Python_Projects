@@ -10,9 +10,9 @@ class Cari_Access():
     def __init__(self, DB_Interface,LG_Interface):
         self._ICari = DB_Interface
         self.listee= LG_Interface
-    def connect(self,mesaj):
+    def connect(self,mesaj,mesaj2):
         for qwe in self._ICari:
-            qwe.connect(self)
+            qwe.connect(self,mesaj,mesaj2)
         for qwe in self.listee:
             #if qwe.__class__.__name__ == "Dosya_Yaz":
             #    qwe.connect(self,mesaj)
@@ -20,25 +20,6 @@ class Cari_Access():
                 qwe.connect(self,mesaj)
                 
         
-       
-       
-       
-       
-       
-"""     
-  __dict__     
-    def kaydet(self, DB_Interface ,Loglama_Interface  ):
-       classname = DB_Interface
-       x=classname()
-       x.connect()
-     
-       
-       clsnm = Loglama_Interface 
-       x=clsnm()
-       x.connect()
       
-"""
-        
-        
   
     
