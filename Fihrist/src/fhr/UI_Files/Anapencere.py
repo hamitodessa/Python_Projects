@@ -11,7 +11,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import fhr.UI_Files.fih_resources
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -328,13 +327,13 @@ class Ui_MainWindow(object):
         self.chckBox_Mail.setObjectName("chckBox_Mail")
         self.verticalLayout_3.addWidget(self.chckBox_Mail)
         self.layoutWidget2 = QtWidgets.QWidget(self.tab_Ayarlar)
-        self.layoutWidget2.setGeometry(QtCore.QRect(20, 270, 254, 28))
+        self.layoutWidget2.setGeometry(QtCore.QRect(20, 270, 416, 28))
         self.layoutWidget2.setObjectName("layoutWidget2")
         self.horizontalLayout_10 = QtWidgets.QHBoxLayout(self.layoutWidget2)
         self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
         self.btnBaglan = QtWidgets.QPushButton(self.layoutWidget2)
-        self.btnBaglan.setMinimumSize(QtCore.QSize(37, 18))
+        self.btnBaglan.setMinimumSize(QtCore.QSize(64, 25))
         self.btnBaglan.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/newPrefix/connected-32.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -342,7 +341,7 @@ class Ui_MainWindow(object):
         self.btnBaglan.setObjectName("btnBaglan")
         self.horizontalLayout_10.addWidget(self.btnBaglan)
         self.btnVeritabani = QtWidgets.QPushButton(self.layoutWidget2)
-        self.btnVeritabani.setMinimumSize(QtCore.QSize(37, 18))
+        self.btnVeritabani.setMinimumSize(QtCore.QSize(64, 25))
         self.btnVeritabani.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/newPrefix/database-32.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -350,7 +349,7 @@ class Ui_MainWindow(object):
         self.btnVeritabani.setObjectName("btnVeritabani")
         self.horizontalLayout_10.addWidget(self.btnVeritabani)
         self.btnSil = QtWidgets.QPushButton(self.layoutWidget2)
-        self.btnSil.setMinimumSize(QtCore.QSize(37, 18))
+        self.btnSil.setMinimumSize(QtCore.QSize(64, 25))
         self.btnSil.setText("")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(":/newPrefix/delete-32.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -358,7 +357,7 @@ class Ui_MainWindow(object):
         self.btnSil.setObjectName("btnSil")
         self.horizontalLayout_10.addWidget(self.btnSil)
         self.btnEkle = QtWidgets.QPushButton(self.layoutWidget2)
-        self.btnEkle.setMinimumSize(QtCore.QSize(37, 18))
+        self.btnEkle.setMinimumSize(QtCore.QSize(64, 25))
         self.btnEkle.setText("")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap(":/newPrefix/add-32.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -366,7 +365,7 @@ class Ui_MainWindow(object):
         self.btnEkle.setObjectName("btnEkle")
         self.horizontalLayout_10.addWidget(self.btnEkle)
         self.btnKaydet = QtWidgets.QPushButton(self.layoutWidget2)
-        self.btnKaydet.setMinimumSize(QtCore.QSize(37, 18))
+        self.btnKaydet.setMinimumSize(QtCore.QSize(64, 25))
         self.btnKaydet.setText("")
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap(":/newPrefix/save-32.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -374,7 +373,7 @@ class Ui_MainWindow(object):
         self.btnKaydet.setObjectName("btnKaydet")
         self.horizontalLayout_10.addWidget(self.btnKaydet)
         self.brnCikis = QtWidgets.QPushButton(self.layoutWidget2)
-        self.brnCikis.setMinimumSize(QtCore.QSize(37, 18))
+        self.brnCikis.setMinimumSize(QtCore.QSize(64, 25))
         self.brnCikis.setText("")
         icon5 = QtGui.QIcon()
         icon5.addPixmap(QtGui.QPixmap(":/newPrefix/exit-32.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -390,7 +389,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.tabKontrol.setCurrentIndex(1)
+        self.tabKontrol.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):

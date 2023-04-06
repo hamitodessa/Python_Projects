@@ -17,6 +17,7 @@ from fhr.UI_Files.Anapencere import *
 import Cal_Dizini.Baglan as bAGLAN
 import Cal_Dizini.Baglan_Log as bAGLAN_LOG
 
+
 Uygulama= QApplication(sys.argv)
 penAna = QMainWindow()
 ui= Ui_MainWindow()
@@ -58,30 +59,36 @@ def dizin_kontrol():
 
 def server_kontrol():
     try:
+        if not ui.txtInstance.text():
+            return
+        if not ui.txtKullanici.text():
+            return
+        if not ui.txtSifre.text():
+            return
+        if not ui.txtServer.text():
+            return
         conn_aktar()
-        
+        from Server_Baglan.Connect import Connect
         if ui.chckBox_Lokal.isChecked() :
-            if not ui.txtInstance.text():
-                return
-            if not ui.txtKullanici.text():
-                return
-            if not ui.txtSifre.text():
-                return
-            if not ui.txtServer.text():
-                return
-            from Server_Baglan.Connect import Connect
             conn = Connect(glb._IConn)
             sonuc =  conn.Server_kontrol_L(ui.txtInstance.text(), ui.txtKullanici.text(),  ui.txtSifre.text(), ui.txtServer.text())
             print(sonuc)
             if  sonuc :
-                print("Baglandi")
+                ui.btnVeritabani.setEnabled(True)
             else:
                 from tkinter import messagebox
                 messagebox.showwarning("Server Baglanti", "Baglanti Saglanamadi........")
                 #btnNewButton_1.setEnabled(false);
               
         else: # Server Control
-            pass
+            conn = Connect(glb._IConn)
+            sonuc =  conn.Server_kontrol_S(ui.txtServer.text(),ui.txtInstance.text(), ui.txtKullanici.text(),  ui.txtSifre.text(), ui.txtServer.text())
+            if  sonuc :
+                ui.btnVeritabani.setEnabled(True)
+            else:
+                from tkinter import messagebox
+                messagebox.showwarning("Server Baglanti", "Baglanti Saglanamadi........")
+                #btnNewButton_1.setEnabled(false);
     except Exception as e:
     # Just print(e) is cleaner and more likely what you want,
     # but if you insist on printing message specifically whenever possible...
@@ -105,6 +112,7 @@ def btnAyarlar():
     #print(ui.tabKontrol.currentIndex())
     #ui.tabKontrol.setCurrentIndex(1)
     ui.tabKontrol.tabBar().close()
+    ui.btnVeritabani.setEnabled(False)
     ui.tabKontrol.setCurrentWidget(ui.tabKontrol.findChild(QWidget, "tab_Ayarlar"))
 def chckBox_Lokal_Checked():
     if ui.chckBox_Lokal.isChecked() :
