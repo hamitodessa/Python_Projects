@@ -259,7 +259,7 @@ QDialogButtonBox {
          <string notr="true"/>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <property name="documentMode">
          <bool>false</bool>
@@ -633,22 +633,119 @@ QDialogButtonBox {
            </item>
           </layout>
          </widget>
-         <widget class="QPushButton" name="pushButton_4">
+         <widget class="QWidget" name="">
           <property name="geometry">
            <rect>
-            <x>70</x>
-            <y>280</y>
-            <width>75</width>
-            <height>24</height>
+            <x>20</x>
+            <y>270</y>
+            <width>254</width>
+            <height>28</height>
            </rect>
           </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset resource="fih_resources.qrc">
-            <normaloff>:/newPrefix/icons8-up-down-arrow-16.png</normaloff>:/newPrefix/icons8-up-down-arrow-16.png</iconset>
-          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_10">
+           <item>
+            <widget class="QPushButton" name="btnBaglan">
+             <property name="minimumSize">
+              <size>
+               <width>37</width>
+               <height>18</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="fih_resources.qrc">
+               <normaloff>:/newPrefix/connected-32.png</normaloff>:/newPrefix/connected-32.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnVeritabani">
+             <property name="minimumSize">
+              <size>
+               <width>37</width>
+               <height>18</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="fih_resources.qrc">
+               <normaloff>:/newPrefix/database-32.png</normaloff>:/newPrefix/database-32.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnSil">
+             <property name="minimumSize">
+              <size>
+               <width>37</width>
+               <height>18</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="fih_resources.qrc">
+               <normaloff>:/newPrefix/delete-32.png</normaloff>:/newPrefix/delete-32.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnEkle">
+             <property name="minimumSize">
+              <size>
+               <width>37</width>
+               <height>18</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="fih_resources.qrc">
+               <normaloff>:/newPrefix/add-32.png</normaloff>:/newPrefix/add-32.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnKaydet">
+             <property name="minimumSize">
+              <size>
+               <width>37</width>
+               <height>18</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="fih_resources.qrc">
+               <normaloff>:/newPrefix/save-32.png</normaloff>:/newPrefix/save-32.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="brnCikis">
+             <property name="minimumSize">
+              <size>
+               <width>37</width>
+               <height>18</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="fih_resources.qrc">
+               <normaloff>:/newPrefix/exit-32.png</normaloff>:/newPrefix/exit-32.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </widget>
        </widget>
