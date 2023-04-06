@@ -71,7 +71,6 @@ def server_kontrol():
                 return
             from Server_Baglan.Connect import Connect
             conn = Connect(glb._IConn)
-            
             sonuc =  conn.Server_kontrol_L(ui.txtInstance.text(), ui.txtKullanici.text(),  ui.txtSifre.text(), ui.txtServer.text())
             print(sonuc)
             if  sonuc :
