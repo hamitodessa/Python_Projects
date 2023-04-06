@@ -7,6 +7,7 @@ Created on Apr 1, 2023
 #region SURUCU_DOSYA_BILGILERI
 SURUCU = "C:/OBS_SISTEM/"
 OBS_DOSYA = "OBS_SISTEM_2025.DB"
+OBS_FIHRIST_DOSYA = "FIHRIST.DB"
 LOG_DOSYA = "SQL_LOG.MDB"
 DBYERI = "C:/OBS_DATABASES/"
 
@@ -49,6 +50,11 @@ def myConnection():
         return sqlite3.connect(SURUCU + OBS_DOSYA)
     except:
         return None
+def myFConnection():
+    try:
+        return sqlite3.connect(SURUCU + OBS_FIHRIST_DOSYA)
+    except:
+        return None
     
 def obs_dosya_olustur():
     conn =myConnection() #if None
@@ -73,6 +79,24 @@ def obs_dosya_olustur():
     sql = "CREATE TABLE LOG_MAIL (USER_NAME    CHAR(20),E_MAIL     CHAR(50), AKTIV  INTEGER); " 
     curs.execute(sql)
     conn.commit()
+def obs_fih_dosya_olustur():
+    try:
+        conn = myFConnection() #if None
+        curs = conn.cursor()
+        sql = "CREATE TABLE USER_DETAILS (CDID INTEGER PRIMARY KEY AUTOINCREMENT ,USER_PROG_KODU    CHAR(10) NOT NULL,    \
+                USER_SERVER CHAR(50), USER_PWD_SERVER BLOB,USER_INSTANCE_OBS CHAR(50),USER_IP_OBS CHAR(50),USER_PROG_OBS CHAR(20), \
+                DIZIN CHAR(200),YER CHAR(1), DIZIN_CINS CHAR(1),IZINLI_MI CHAR(1),CALISAN_MI CHAR(1),HANGI_SQL CHAR(10),LOG INTEGER , LOG_YERI CHAR(75)); " 
+        curs.execute(sql)
+        sql = "CREATE TABLE LOG_MAIL (USER_NAME    CHAR(20),E_MAIL     CHAR(50), AKTIV  INTEGER); " 
+        curs.execute(sql)
+        conn.commit()
+    except Exception as e:
+    # Just print(e) is cleaner and more likely what you want,
+    # but if you insist on printing message specifically whenever possible...
+        if hasattr(e, 'message'):
+            print(e.message)
+        else:
+            print(e)
 def surucu_kontrol():
     import os
     isExist = os.path.exists(SURUCU)
@@ -91,6 +115,21 @@ def surucu_kontrol():
         obs_dosya_olustur
         #Tema_Cari.dosya_yap();
         #set_ilk()  //obs_set_olustur();
+def fih_surucu_kontrol():
+    import os
+    isExist = os.path.exists(SURUCU)
+    if isExist == False:
+            os.mkdir(SURUCU) 
+    isExist = os.path.exists(DBYERI)
+    if isExist == False:
+            os.mkdir(DBYERI) 
+    isExist =os.path.isfile(SURUCU + OBS_FIHRIST_DOSYA)
+    if not isExist:
+        print("dos yok")
+        obs_fih_dosya_olustur()
+        #Tema_Cari.dosya_yap();
+        #set_ilk()  //obs_set_olustur();
+
 def char_degis (degisken):
         return degisken.replace(":","_");
             

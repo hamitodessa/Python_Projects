@@ -38,22 +38,26 @@ fih.baglan("Deneme mesaji")
 
 def dizin_kontrol():
     import os
-    isExist =os.path.isfile(glb.SURUCU + glb.OBS_DOSYA)
+    isExist =os.path.isfile(glb.SURUCU + glb.OBS_FIHRIST_DOSYA)
     if isExist:
         #Dosya var
-        print("dos var")
         bAGLAN.cONNECT("hamit")
         bAGLAN_LOG.cONNECT()
-        print ("kull1=" +bAGLAN.fihDizin.kULLANICI)
-        print ("kull2=" +bAGLAN.cariDizin.kOD)
-        print ("kull3=" +bAGLAN.cariDizin.sERVER)
-        print ("kull4=" +bAGLAN_LOG.cariLogDizin.cONN_STR)
-        print ("kull5=" +bAGLAN_LOG.cariLogDizin.mODULADI)
+        if bAGLAN.fihDizin.kULLANICI == "":
+            print("kod bos")
+            loglama_kapat()
+            btnAyarlar()
+        else:
+            print ("kull1=" +bAGLAN.fihDizin.kULLANICI)
+            print ("kull2=" +bAGLAN.cariDizin.kOD)
+            print ("kull3=" +bAGLAN.cariDizin.sERVER)
+            print ("kull4=" +bAGLAN_LOG.cariLogDizin.cONN_STR)
+            print ("kull5=" +bAGLAN_LOG.cariLogDizin.mODULADI)
     else:
-        glb.surucu_kontrol()
+        glb.fih_surucu_kontrol()
     
 def btnAyarlar():
-    print(ui.tabKontrol.currentIndex())
+    #print(ui.tabKontrol.currentIndex())
     #ui.tabKontrol.setCurrentIndex(1)
     ui.tabKontrol.tabBar().close()
     ui.tabKontrol.setCurrentWidget(ui.tabKontrol.findChild(QWidget, "tab_Ayarlar"))
@@ -76,11 +80,12 @@ def chckBox_Loglama_Checked():
         ui.chckBox_Text.setVisible(True)
         ui.chckBox_Mail.setVisible(True)
     else:
-        ui.chckBox_Veritabani.setVisible(False)
-        ui.chckBox_SQLite.setVisible(False)
-        ui.chckBox_Text.setVisible(False)
-        ui.chckBox_Mail.setVisible(False)
-
+        loglama_kapat()
+def loglama_kapat():
+    ui.chckBox_Veritabani.setVisible(False)
+    ui.chckBox_SQLite.setVisible(False)
+    ui.chckBox_Text.setVisible(False)
+    ui.chckBox_Mail.setVisible(False)
         
     
 
