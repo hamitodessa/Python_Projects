@@ -26,7 +26,7 @@ ui= Ui_MainWindow()
 ui.setupUi(penAna)
 
 
-
+import pdb;pdb.set_trace()
 
 
 
