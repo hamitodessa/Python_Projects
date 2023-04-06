@@ -9,6 +9,8 @@ import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
 
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication
 
 from Global import Global  as glb
 from fh.Access_DB import Fihrist_Access 
@@ -59,6 +61,8 @@ def dizin_kontrol():
 
 def server_kontrol():
     try:
+        QApplication.setOverrideCursor(Qt.WaitCursor)
+       
         if not ui.txtInstance.text():
             return
         if not ui.txtKullanici.text():
@@ -89,6 +93,8 @@ def server_kontrol():
                 from tkinter import messagebox
                 messagebox.showwarning("Server Baglanti", "Baglanti Saglanamadi........")
                 #btnNewButton_1.setEnabled(false);
+         # do lengthy process
+        QApplication.restoreOverrideCursor()
     except Exception as e:
     # Just print(e) is cleaner and more likely what you want,
     # but if you insist on printing message specifically whenever possible...
