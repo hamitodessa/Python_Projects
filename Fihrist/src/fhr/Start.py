@@ -84,6 +84,7 @@ def dizin_kontrol():
                 ui.chckBox_Mail.setChecked(True)
             else:
                 ui.chckBox_Mail.setChecked(False)
+            btnKisiler()
     else:
         glb.fih_surucu_kontrol()
 
@@ -169,13 +170,15 @@ def calisma_dizini_yaz():
     udtl.USER_SERVER = ui.txtKullanici.text()
     udtl.USER_PWD_SERVER = ui.txtSifre.text()
     udtl.USER_INSTANCE_OBS = ui.txtInstance.text()
-    udtl.USER_IP_OBS = ui.txtServer.text()
+    
     udtl.USER_PROG_OBS = "Fihrist"
     udtl.DIZIN = ""
     if ui.chckBox_Lokal.isChecked() :
         udtl.YER = "L"
+        udtl.USER_IP_OBS = ""
     else:
         udtl.YER = "S"
+        udtl.USER_IP_OBS = ui.txtServer.text()
     udtl.DIZIN_CINS = "D"
     udtl.IZINLI_MI="E"
     udtl.CALISAN_MI = "E"
@@ -216,7 +219,12 @@ def btnAyarlar():
     ui.tabKontrol.setCurrentWidget(ui.tabKontrol.findChild(QWidget, "tab_Ayarlar"))
 def btnKisiler():
     ui.tabKontrol.tabBar().close()
-    ui.tabKontrol.setCurrentWidget(ui.tabKontrol.findChild(QWidget, "tab_Kisiler"))    
+    ui.tabKontrol.setCurrentWidget(ui.tabKontrol.findChild(QWidget, "tab_Kisiler")) 
+    
+    glb._Fihrist = [glb.Ms_Sql]
+    glb._IFihrist_Loger = []
+    fih = Fihrist_Access(glb._Fihrist,glb._IFihrist_Loger)
+    fih.baglan("Deneme mesaji")   
 def chckBox_Lokal_Checked():
     if ui.chckBox_Lokal.isChecked() :
         ui.chckBox_Server.setChecked(False)

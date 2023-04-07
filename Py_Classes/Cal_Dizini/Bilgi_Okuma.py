@@ -32,16 +32,16 @@ class Bilgi_Oku:
                 dIZIN.lOG = row[14]
                 dIZIN.lOGLAMA_YERI = row[15]
             if dIZIN.yER == "L" :
-                if dIZIN.hAN_SQL =="MS SQL" :
+                if dIZIN.hAN_SQL =="Ms Sql" :
                     port = dIZIN.sERVER 
                     if  not port == "":
                         port =  ":" + port 
-                    dIZIN.cONN_STR =  "localhost "+ port +";instanceName=" + dIZIN.iNSTANCE + " ; database=" + dOSYA_BASLANGIC  + dIZIN.kOD 
-                elif dIZIN.hAN_SQL == "MY SQL" : 
+                    dIZIN.cONN_STR =  "localhost"+ port + "\\" + dIZIN.iNSTANCE + " ; Database=" + dOSYA_BASLANGIC  + dIZIN.kOD + ";UID="+ dIZIN.kULLANICI+ ";PWD=" + dIZIN.sIFRESI 
+                elif dIZIN.hAN_SQL == "My Sql" : 
                     dIZIN.cONN_STR =  "localhost:" + dIZIN.sERVER + "/" + dOSYA_BASLANGIC  + dIZIN.kOD 
             else:
-                if dIZIN.hAN_SQL == "MS SQL" :
+                if dIZIN.hAN_SQL == "Ms Sql" :
                     dIZIN.cONN_STR = dIZIN.sERVER + ";instanceName=" +dIZIN.iNSTANCE + " ; database=" +  dOSYA_BASLANGIC +dIZIN.kOD 
-                elif dIZIN.hAN_SQL == "MY SQL" :
+                elif dIZIN.hAN_SQL == "Ms Sql" :
                     dIZIN.cONN_STR = dIZIN.sERVER + " /" +  dOSYA_BASLANGIC +dIZIN.kOD 
         conn.commit()
