@@ -8,7 +8,7 @@ import sys
 
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
-
+from tkinter import messagebox
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication
 
@@ -19,6 +19,7 @@ from fhr.UI_Files.Anapencere import *
 import Cal_Dizini.Baglan as bAGLAN
 import Cal_Dizini.Baglan_Log as bAGLAN_LOG
 
+from Server_Baglan.Connect import Connect
 
 Uygulama= QApplication(sys.argv)
 penAna = QMainWindow()
@@ -26,7 +27,7 @@ ui= Ui_MainWindow()
 ui.setupUi(penAna)
 
 
-import pdb;pdb.set_trace()
+#import pdb;pdb.set_trace()
 
 
 
@@ -62,46 +63,73 @@ def dizin_kontrol():
 def server_kontrol():
     try:
         QApplication.setOverrideCursor(Qt.WaitCursor)
-       
         if not ui.txtInstance.text():
             return
         if not ui.txtKullanici.text():
             return
         if not ui.txtSifre.text():
             return
-        if not ui.txtServer.text():
-            return
         conn_aktar()
-        from Server_Baglan.Connect import Connect
         if ui.chckBox_Lokal.isChecked() :
             conn = Connect(glb._IConn)
             sonuc =  conn.Server_kontrol_L(ui.txtInstance.text(), ui.txtKullanici.text(),  ui.txtSifre.text(), ui.txtServer.text())
-            print(sonuc)
             if  sonuc :
                 ui.btnVeritabani.setEnabled(True)
+                QApplication.restoreOverrideCursor()
             else:
-                from tkinter import messagebox
                 messagebox.showwarning("Server Baglanti", "Baglanti Saglanamadi........")
-                #btnNewButton_1.setEnabled(false);
-              
+                ui.btnVeritabani.setEnabled(False)
         else: # Server Control
+            if not ui.txtServer.text():
+                QApplication.restoreOverrideCursor()
+                return
             conn = Connect(glb._IConn)
             sonuc =  conn.Server_kontrol_S(ui.txtServer.text(),ui.txtInstance.text(), ui.txtKullanici.text(),  ui.txtSifre.text(), ui.txtServer.text())
             if  sonuc :
                 ui.btnVeritabani.setEnabled(True)
+                QApplication.restoreOverrideCursor()
             else:
-                from tkinter import messagebox
+                QApplication.restoreOverrideCursor()
                 messagebox.showwarning("Server Baglanti", "Baglanti Saglanamadi........")
-                #btnNewButton_1.setEnabled(false);
-         # do lengthy process
-        QApplication.restoreOverrideCursor()
+                ui.btnVeritabani.setEnabled(False)
     except Exception as e:
-    # Just print(e) is cleaner and more likely what you want,
-    # but if you insist on printing message specifically whenever possible...
+        QApplication.restoreOverrideCursor()
         if hasattr(e, 'message'):
-            print(e.message)
+            messagebox.showwarning("Server Baglanti", e.message)
         else:
-            print(e)
+            messagebox.showwarning("Server Baglanti", e)
+def dosya_kontrol():
+    try:
+        QApplication.setOverrideCursor(Qt.WaitCursor)
+        conn_aktar()
+        if ui.chckBox_Lokal.isChecked() :
+            conn = Connect(glb._IConn)
+            sonuc =  conn.Dosyakontrol_L("OK_Fih" + ui.txtKod.text(), ui.txtKullanici.text(),  ui.txtSifre.text(), ui.txtInstance.text() ,ui.txtServer.text())
+            if  sonuc :
+                QApplication.restoreOverrideCursor()
+                messagebox.showinfo("Veritabani Kontrol", "Baglanti Saglandi........")
+            else:
+                QApplication.restoreOverrideCursor()
+                messagebox.showwarning("Veritabani Kontrol", "Baglanti Saglanamadi........")
+                ui.btnVeritabani.setEnabled(False)
+        else: # Server Control
+            if not ui.txtServer.text():
+                QApplication.restoreOverrideCursor()
+                return
+            conn = Connect(glb._IConn)
+            sonuc =  conn.Dosyakontrol_S(ui.txtServer.text(),ui.txtInstance.text(), ui.txtKullanici.text(),  ui.txtSifre.text(),"OK_Fih" +  ui.txtKod.text()  ,ui.txtServer.text())
+            if  sonuc :
+                messagebox.showinfo("Veritabani Kontrol", "Baglanti Saglandi........")
+                QApplication.restoreOverrideCursor()
+            else:
+                messagebox.showwarning("Veritabani Kontrol", "Baglanti Saglanamadi........")
+                ui.btnVeritabani.setEnabled(False)
+    except Exception as e:
+        QApplication.restoreOverrideCursor()
+        if hasattr(e, 'message'):
+            messagebox.showwarning("Veritabani Kontrol", e.message)
+        else:
+            messagebox.showwarning("Veritabani Kontrol", e)
 def conn_aktar():
     hangi = ui.comboBox.currentText()
     from  Server_Baglan.OBS_Ortak_MsSql import Obs_Ortak_MsSql
@@ -117,9 +145,11 @@ def conn_aktar():
 def btnAyarlar():
     #print(ui.tabKontrol.currentIndex())
     #ui.tabKontrol.setCurrentIndex(1)
-    ui.tabKontrol.tabBar().close()
     ui.btnVeritabani.setEnabled(False)
     ui.tabKontrol.setCurrentWidget(ui.tabKontrol.findChild(QWidget, "tab_Ayarlar"))
+def btnKisiler():
+    ui.tabKontrol.tabBar().close()
+    ui.tabKontrol.setCurrentWidget(ui.tabKontrol.findChild(QWidget, "tab_Kisiler"))    
 def chckBox_Lokal_Checked():
     if ui.chckBox_Lokal.isChecked() :
         ui.chckBox_Server.setChecked(False)
@@ -146,18 +176,21 @@ def loglama_kapat():
     ui.chckBox_Text.setVisible(False)
     ui.chckBox_Mail.setVisible(False)
         
-    
-
-#*************************** Kontrol ***********************
-dizin_kontrol()
-#***********************************************************
   
 #-----------------BUTTONLAR------------------------------------*
-ui.pushBtnAyarlar.clicked.connect(btnAyarlar)
+ui.btnAyarlar.clicked.connect(btnAyarlar)
+ui.btnKisiler.clicked.connect(btnKisiler)
 ui.chckBox_Lokal.stateChanged.connect(chckBox_Lokal_Checked)
 ui.chckBox_Server.stateChanged.connect(chckBox_Server_Checked)
 ui.chckBox_Loglama.stateChanged.connect(chckBox_Loglama_Checked)
 ui.btnBaglan.clicked.connect(server_kontrol)
+ui.btnVeritabani.clicked.connect(dosya_kontrol)
+
+ui.tabKontrol.tabBar().close()
+
+#*************************** Kontrol ***********************
+dizin_kontrol()
+#***********************************************************
 
 penAna.show()
 
