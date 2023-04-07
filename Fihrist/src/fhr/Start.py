@@ -13,6 +13,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication
 
 from Global import Global  as glb
+from User_Islemleri import User_Islemler as uisl
 from fh.Access_DB import Fihrist_Access 
 
 from fhr.UI_Files.Anapencere import *
@@ -107,7 +108,9 @@ def dosya_kontrol():
             sonuc =  conn.Dosyakontrol_L("OK_Fih" + ui.txtKod.text(), ui.txtKullanici.text(),  ui.txtSifre.text(), ui.txtInstance.text() ,ui.txtServer.text())
             if  sonuc :
                 QApplication.restoreOverrideCursor()
+                
                 messagebox.showinfo("Veritabani Kontrol", "Baglanti Saglandi........")
+                calisma_dizini_yaz()
             else:
                 QApplication.restoreOverrideCursor()
                 messagebox.showwarning("Veritabani Kontrol", "Baglanti Saglanamadi........")
@@ -119,6 +122,7 @@ def dosya_kontrol():
             conn = Connect(glb._IConn)
             sonuc =  conn.Dosyakontrol_S(ui.txtServer.text(),ui.txtInstance.text(), ui.txtKullanici.text(),  ui.txtSifre.text(),"OK_Fih" +  ui.txtKod.text()  ,ui.txtServer.text())
             if  sonuc :
+                calisma_dizini_yaz()
                 messagebox.showinfo("Veritabani Kontrol", "Baglanti Saglandi........")
                 QApplication.restoreOverrideCursor()
             else:
@@ -130,6 +134,42 @@ def dosya_kontrol():
             messagebox.showwarning("Veritabani Kontrol", e.message)
         else:
             messagebox.showwarning("Veritabani Kontrol", e)
+def calisma_dizini_yaz():
+    uisl.calisanmi_degis("fffff", "Fihrist")
+    from User_Islemleri.User_Details import user_detail 
+    udtl = user_detail ()
+    udtl.USER_PROG_KODU = ui.txtKod.text() 
+    udtl.USER_NAME = "fffff"
+    udtl.USER_SERVER = ui.txtKullanici.text()
+    udtl.USER_PWD_SERVER = ui.txtSifre.text()
+    udtl.USER_INSTANCE_OBS = ui.txtInstance.text()
+    udtl.USER_IP_OBS = ui.txtServer.text()
+    udtl.USER_PROG_OBS = "Fihrist"
+    udtl.DIZIN = ""
+    if ui.chckBox_Lokal.isChecked() :
+        udtl.YER = "L"
+    else:
+        udtl.YER = "S"
+    udtl.DIZIN_CINS = "D"
+    udtl.IZINLI_MI="E"
+    udtl.CALISAN_MI = "E"
+    udtl.HANGI_SQL = ui.comboBox.currentText()
+    udtl.CDID = ui.txtcdid.text()
+    udtl.LOG = ui.chckBox_Loglama.checkState()
+    vt = "False"
+    sq = "False"
+    tx = "False"
+    em = "False"
+    if ui.chckBox_Veritabani.isChecked():
+        vt = "True"
+    if ui.chckBox_SQLite.isChecked():
+        sq = "True"
+    if ui.chckBox_Text.isChecked():
+        tx = "True"
+    if ui.chckBox_Mail.isChecked():
+        em = "True"
+    udtl.LOG_YERI = vt + "," + sq +"," + tx +"," + em
+    uisl.details_yaz(udtl)
 def conn_aktar():
     hangi = ui.comboBox.currentText()
     from  Server_Baglan.OBS_Ortak_MsSql import Obs_Ortak_MsSql
@@ -187,7 +227,7 @@ ui.btnBaglan.clicked.connect(server_kontrol)
 ui.btnVeritabani.clicked.connect(dosya_kontrol)
 
 ui.tabKontrol.tabBar().close()
-
+ui.txtcdid.setVisible(False)
 #*************************** Kontrol ***********************
 dizin_kontrol()
 #***********************************************************

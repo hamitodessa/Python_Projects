@@ -9,8 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import fhr.UI_Files.fih_resources
 
+import fhr.UI_Files.fih_resources
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -327,7 +327,7 @@ class Ui_MainWindow(object):
         self.chckBox_Mail.setObjectName("chckBox_Mail")
         self.verticalLayout_3.addWidget(self.chckBox_Mail)
         self.layoutWidget2 = QtWidgets.QWidget(self.tab_Ayarlar)
-        self.layoutWidget2.setGeometry(QtCore.QRect(20, 270, 416, 28))
+        self.layoutWidget2.setGeometry(QtCore.QRect(20, 240, 416, 31))
         self.layoutWidget2.setObjectName("layoutWidget2")
         self.horizontalLayout_10 = QtWidgets.QHBoxLayout(self.layoutWidget2)
         self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
@@ -380,6 +380,9 @@ class Ui_MainWindow(object):
         self.brnCikis.setIcon(icon5)
         self.brnCikis.setObjectName("brnCikis")
         self.horizontalLayout_10.addWidget(self.brnCikis)
+        self.txtcdid = QtWidgets.QLineEdit(self.tab_Ayarlar)
+        self.txtcdid.setGeometry(QtCore.QRect(260, 190, 41, 22))
+        self.txtcdid.setObjectName("txtcdid")
         self.tabKontrol.addTab(self.tab_Ayarlar, "")
         self.horizontalLayout_3.addWidget(self.tabKontrol)
         self.verticalLayout.addLayout(self.horizontalLayout_3)
