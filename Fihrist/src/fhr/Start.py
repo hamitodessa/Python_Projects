@@ -46,18 +46,44 @@ def dizin_kontrol():
     isExist =os.path.isfile(glb.SURUCU + glb.OBS_FIHRIST_DOSYA)
     if isExist:
         #Dosya var
-        bAGLAN.cONNECT("hamit")
+        bAGLAN.cONNECT("fffff")
         bAGLAN_LOG.cONNECT()
         if bAGLAN.fihDizin.kULLANICI == "":
             loglama_kapat()
             btnAyarlar()
         else:
-            pass
-            #print ("kull1=" +bAGLAN.fihDizin.kULLANICI)
-            #print ("kull2=" +bAGLAN.cariDizin.kOD)
-            #print ("kull3=" +bAGLAN.cariDizin.sERVER)
-            #print ("kull4=" +bAGLAN_LOG.cariLogDizin.cONN_STR)
-            #print ("kull5=" +bAGLAN_LOG.cariLogDizin.mODULADI)
+            ui.txtKod.setText(bAGLAN.fihDizin.kOD)
+            ui.txtInstance.setText(bAGLAN.fihDizin.iNSTANCE)
+            ui.txtServer.setText(bAGLAN.fihDizin.sERVER)
+            ui.txtKullanici.setText(bAGLAN.fihDizin.kULLANICI)
+            ui.txtSifre.setText(bAGLAN.fihDizin.sIFRESI)
+            ui.txtcdid.setText(str(bAGLAN.fihDizin.cDID))
+            if bAGLAN.fihDizin.yER == "L":
+                ui.chckBox_Lokal.setChecked(True)
+                ui.chckBox_Server.setChecked(False)
+            else:
+                ui.chckBox_Server.setChecked(True)
+                ui.chckBox_Lokal.setChecked(False)
+            ui.chckBox_Loglama.setChecked(bAGLAN.fihDizin.lOG)
+            if not ui.chckBox_Loglama.isChecked():
+                loglama_kapat()
+            logl = bAGLAN.fihDizin.lOGLAMA_YERI.split(',')
+            if logl[0] == "True" :
+                ui.chckBox_Veritabani.setChecked(True)
+            else:
+                ui.chckBox_Veritabani.setChecked(False)
+            if logl[1] == "True" :
+                ui.chckBox_SQLite.setChecked(True)
+            else:
+                ui.chckBox_SQLite.setChecked(False)
+            if logl[2] == "True" :
+                ui.chckBox_Text.setChecked(True)
+            else:
+                ui.chckBox_Text.setChecked(False)
+            if logl[3] == "True" :
+                ui.chckBox_Mail.setChecked(True)
+            else:
+                ui.chckBox_Mail.setChecked(False)
     else:
         glb.fih_surucu_kontrol()
 
@@ -160,14 +186,15 @@ def calisma_dizini_yaz():
     sq = "False"
     tx = "False"
     em = "False"
-    if ui.chckBox_Veritabani.isChecked():
-        vt = "True"
-    if ui.chckBox_SQLite.isChecked():
-        sq = "True"
-    if ui.chckBox_Text.isChecked():
-        tx = "True"
-    if ui.chckBox_Mail.isChecked():
-        em = "True"
+    if ui.chckBox_Loglama.isChecked():
+        if ui.chckBox_Veritabani.isChecked():
+            vt = "True"
+        if ui.chckBox_SQLite.isChecked():
+            sq = "True"
+        if ui.chckBox_Text.isChecked():
+            tx = "True"
+        if ui.chckBox_Mail.isChecked():
+            em = "True"
     udtl.LOG_YERI = vt + "," + sq +"," + tx +"," + em
     uisl.details_yaz(udtl)
 def conn_aktar():

@@ -432,7 +432,7 @@ QDialogButtonBox {
 }</string>
                </property>
                <property name="text">
-                <string>019</string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -474,7 +474,7 @@ QDialogButtonBox {
 }</string>
                </property>
                <property name="text">
-                <string>SQLEXPRESS</string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -516,7 +516,7 @@ QDialogButtonBox {
 }</string>
                </property>
                <property name="text">
-                <string>localhost</string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -558,7 +558,7 @@ QDialogButtonBox {
 }</string>
                </property>
                <property name="text">
-                <string>sa</string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -600,7 +600,7 @@ QDialogButtonBox {
 }</string>
                </property>
                <property name="text">
-                <string>197227oOk</string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -761,6 +761,16 @@ QDialogButtonBox {
             </widget>
            </item>
           </layout>
+         </widget>
+         <widget class="QLineEdit" name="txtcdid">
+          <property name="geometry">
+           <rect>
+            <x>260</x>
+            <y>190</y>
+            <width>41</width>
+            <height>22</height>
+           </rect>
+          </property>
          </widget>
         </widget>
        </widget>

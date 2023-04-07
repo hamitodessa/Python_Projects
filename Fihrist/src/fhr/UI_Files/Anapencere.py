@@ -9,8 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 import fhr.UI_Files.fih_resources
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -237,6 +237,7 @@ class Ui_MainWindow(object):
 "    padding: 0 8px;\n"
 "     selection-background-color: darkgray;\n"
 "}")
+        self.txtKod.setText("")
         self.txtKod.setObjectName("txtKod")
         self.horizontalLayout_5.addWidget(self.txtKod)
         self.verticalLayout_6.addLayout(self.horizontalLayout_5)
@@ -254,6 +255,7 @@ class Ui_MainWindow(object):
 "    padding: 0 8px;\n"
 "     selection-background-color: darkgray;\n"
 "}")
+        self.txtInstance.setText("")
         self.txtInstance.setObjectName("txtInstance")
         self.horizontalLayout_6.addWidget(self.txtInstance)
         self.verticalLayout_6.addLayout(self.horizontalLayout_6)
@@ -271,6 +273,7 @@ class Ui_MainWindow(object):
 "    padding: 0 8px;\n"
 "     selection-background-color: darkgray;\n"
 "}")
+        self.txtServer.setText("")
         self.txtServer.setObjectName("txtServer")
         self.horizontalLayout_7.addWidget(self.txtServer)
         self.verticalLayout_6.addLayout(self.horizontalLayout_7)
@@ -288,6 +291,7 @@ class Ui_MainWindow(object):
 "    padding: 0 8px;\n"
 "     selection-background-color: darkgray;\n"
 "}")
+        self.txtKullanici.setText("")
         self.txtKullanici.setObjectName("txtKullanici")
         self.horizontalLayout_8.addWidget(self.txtKullanici)
         self.verticalLayout_6.addLayout(self.horizontalLayout_8)
@@ -305,6 +309,7 @@ class Ui_MainWindow(object):
 "    padding: 0 8px;\n"
 "     selection-background-color: darkgray;\n"
 "}")
+        self.txtSifre.setText("")
         self.txtSifre.setObjectName("txtSifre")
         self.horizontalLayout_9.addWidget(self.txtSifre)
         self.verticalLayout_6.addLayout(self.horizontalLayout_9)
@@ -417,15 +422,10 @@ class Ui_MainWindow(object):
         self.chckBox_Server.setText(_translate("MainWindow", "Server"))
         self.chckBox_Loglama.setText(_translate("MainWindow", "Loglama"))
         self.label.setText(_translate("MainWindow", "Kodu"))
-        self.txtKod.setText(_translate("MainWindow", "019"))
         self.label_2.setText(_translate("MainWindow", "Instance"))
-        self.txtInstance.setText(_translate("MainWindow", "SQLEXPRESS"))
         self.label_3.setText(_translate("MainWindow", "Server"))
-        self.txtServer.setText(_translate("MainWindow", "localhost"))
         self.label_4.setText(_translate("MainWindow", "Kullanici"))
-        self.txtKullanici.setText(_translate("MainWindow", "sa"))
         self.label_5.setText(_translate("MainWindow", "Sifre"))
-        self.txtSifre.setText(_translate("MainWindow", "197227oOk"))
         self.chckBox_Veritabani.setText(_translate("MainWindow", "Veritabani"))
         self.chckBox_SQLite.setText(_translate("MainWindow", "SQ Lite"))
         self.chckBox_Text.setText(_translate("MainWindow", "Text"))
