@@ -36,7 +36,7 @@ class Bilgi_Oku:
                     port = dIZIN.sERVER 
                     if  not port == "":
                         port =  ":" + port 
-                    dIZIN.cONN_STR =  "localhost"+ port + "\\" + dIZIN.iNSTANCE + " ; Database=" + dOSYA_BASLANGIC  + dIZIN.kOD + ";UID="+ dIZIN.kULLANICI+ ";PWD=" + dIZIN.sIFRESI 
+                    dIZIN.cONN_STR =  'localhost'+ port + '\\' + dIZIN.iNSTANCE + ';database=' + dOSYA_BASLANGIC  + dIZIN.kOD + ';Trust_Connection =True;UID='+ dIZIN.kULLANICI+ ';PWD=' + dIZIN.sIFRESI  
                 elif dIZIN.hAN_SQL == "My Sql" : 
                     dIZIN.cONN_STR =  "localhost:" + dIZIN.sERVER + "/" + dOSYA_BASLANGIC  + dIZIN.kOD 
             else:

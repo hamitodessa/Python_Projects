@@ -10,9 +10,7 @@ import pypyodbc
 conn = ""
 class Ms_Sql(IFihristt):
     def connect(self,mesaj):
-            print(r'DRIVER={SQL SERVER};Server=' + cdzn.fihDizin.cONN_STR + ';Trust_Connection =True')
-            conn = pypyodbc.connect('DRIVER={SQL SERVER};Server=' + cdzn.fihDizin.cONN_STR + ';Trust_Connection =True')
-           
+        conn = pypyodbc.connect(r'DRIVER={SQL SERVER};Server=' + cdzn.fihDizin.cONN_STR )
     def db_kontrol_L(self):
         print('Connecting to Mssql Database...')
     def disconnect(self):

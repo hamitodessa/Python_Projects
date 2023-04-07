@@ -105,6 +105,7 @@ def server_kontrol():
                 ui.btnVeritabani.setEnabled(True)
                 QApplication.restoreOverrideCursor()
             else:
+                QApplication.restoreOverrideCursor()
                 messagebox.showwarning("Server Baglanti", "Baglanti Saglanamadi........")
                 ui.btnVeritabani.setEnabled(False)
         else: # Server Control
