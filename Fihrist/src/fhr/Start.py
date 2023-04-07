@@ -22,6 +22,9 @@ import Cal_Dizini.Baglan_Log as bAGLAN_LOG
 
 from Server_Baglan.Connect import Connect
 
+
+    
+
 Uygulama= QApplication(sys.argv)
 penAna = QMainWindow()
 ui= Ui_MainWindow()

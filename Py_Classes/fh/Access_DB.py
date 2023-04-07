@@ -10,6 +10,13 @@ class Fihrist_Access():
         self.log_liste= ILoger
     def baglan(self,mesaj):
         for qwe in self.IDb:
-            qwe.connect(self,mesaj)
+            qwe.baglan(self,mesaj)
         for qwe in self.log_liste:
             qwe.logla(self,mesaj)
+    def fih__sifirdan_L(self,mesaj):
+        for qwe in self.IDb:
+            qwe.fih__sifirdan_L(self,mesaj)
+    def fih__sifirdan_S(self,mesaj):
+        for qwe in self.IDb:
+            qwe.fih__sifirdan_S(self,mesaj)
+        
