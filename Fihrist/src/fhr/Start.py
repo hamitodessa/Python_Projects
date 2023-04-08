@@ -231,6 +231,7 @@ def dosya_olustur_L():
     else:
         fih.fih__sifirdan_S("dddd")
     
+    calisma_dizini_yaz()
 def calisma_dizini_yaz():
     uisl.calisanmi_degis("fffff", "Fihrist")
     from User_Islemleri.User_Details import user_detail 

@@ -18,7 +18,6 @@ class Ms_Sql(IFihristt):
         global conn
         conn = pypyodbc.connect(r'DRIVER={SQL SERVER};Server=' + cdzn.fihDizin.cONN_STR )
     def fih__sifirdan_L(self,user_detail ):
-       
         instt = "\\" + user_detail.USER_INSTANCE_OBS
         conn = pypyodbc.connect(r'DRIVER={SQL SERVER};Server=localhost' + instt + ';UID='+ user_detail.USER_SERVER+';PWD=' + user_detail.USER_PWD_SERVER +';Trust_Connection =True',
                       autocommit=True) 
@@ -27,16 +26,15 @@ class Ms_Sql(IFihristt):
         curs = conn.cursor()
         curs.execute(sql)
         curs.commit()
+        conn.close()
         #============================
         conn = pypyodbc.connect(r'DRIVER={SQL SERVER};Server=localhost' + instt + ';database='+ VERITABANI  + ';Trust_Connection =True;UID='+ user_detail.USER_SERVER+';PWD=' + user_detail.USER_PWD_SERVER) 
         sql = "CREATE TABLE Fihrist( ID int identity(1,1) CONSTRAINT PKeyid PRIMARY KEY ,Adi nvarchar(50) , Fax nvarchar(25),Tel_1 nvarchar(25),Tel_2 nvarchar(25), \
                     Tel_3 nvarchar(25),Tel_4 nvarchar(25),Ozel nvarchar(50),Mail nvarchar(50) )"
         curs = conn.cursor()
         curs.execute(sql)
-        curs.commit()()
+        curs.commit()
         conn.close()
-        while True:
-            pass
         #**************************** LOG DOSYASI
         conn = pypyodbc.connect(r'DRIVER={SQL SERVER};Server=localhost' + instt + ';UID='+ user_detail.USER_SERVER+';PWD=' + user_detail.USER_PWD_SERVER +';Trust_Connection =True',
                       autocommit=True) 
@@ -44,8 +42,7 @@ class Ms_Sql(IFihristt):
         sql = "CREATE DATABASE [" + VERITABANI + "]"
         curs = conn.cursor()
         curs.execute(sql)
-        curs.close()
-        conn.close()
+        curs.commit()
         #****************************************
         conn = pypyodbc.connect(r'DRIVER={SQL SERVER};Server=localhost' + instt + ';database='+ VERITABANI  + ';Trust_Connection =True;UID='+ user_detail.USER_SERVER+';PWD=' + user_detail.USER_PWD_SERVER) 
         #print(r'DRIVER={SQL SERVER};Server=localhost' + instt + ';database='+ VERITABANI  + ';Trust_Connection =True;UID='+ user_detail.USER_SERVER+';PWD=' + user_detail.USER_PWD_SERVER)
@@ -57,20 +54,17 @@ class Ms_Sql(IFihristt):
                  ) ON [PRIMARY];'
         curs = conn.cursor()
         curs.execute(sql)
-        curs.close()
+        curs.commit()
         sql = 'CREATE NONCLUSTERED INDEX [IX_LOGLAMA] ON [dbo].[LOGLAMA](    [TARIH] ASC,    [EVRAK] ASC , [USER_NAME] ASC  \
                  )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) '
         curs = conn.cursor()
         curs.execute(sql)
         curs.commit()   
-        #****************************************
-        #conn.commit()
         conn.close()
         # VERITABANI DOSYASI ILK ACILIS
         vtlgkayit =  lgkyt.Dao_MsSql.Dao_MsSql()
         vtlgkayit.logla("Dosya Olusturuldu" ,"", bAGLAN_LOG.fihLogDizin)
         vtlgkayit.logla("Firma Adi:" + user_detail.FIRMA_ADI ,"", bAGLAN_LOG.fihLogDizin)
-        
         #*************************************** SQLITE LOG DOSYASI OLUSTUR
         VERITABANI = "OK_Fih" + user_detail.USER_PROG_KODU
         if glb.dos_kontrol(glb.LOG_SURUCU + VERITABANI + "_mSSQL"+  ".DB") == False :
@@ -82,7 +76,6 @@ class Ms_Sql(IFihristt):
         txlgkayit =  lgkyt.Dao_Txt.Dao_Txt()
         txlgkayit.logla("Dosya Olusturuldu" ,"", bAGLAN_LOG.fihLogDizin)
         txlgkayit.logla("Firma Adi:" + user_detail.FIRMA_ADI ,"", bAGLAN_LOG.fihLogDizin)
-        
         
     def fih__sifirdan_S(self,mesaj):
         pass

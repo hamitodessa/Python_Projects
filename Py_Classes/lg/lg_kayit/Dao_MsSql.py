@@ -12,9 +12,7 @@ import datetime
 
 class Dao_MsSql(ILogKayitInterface):
     def logla(self, mesaj, evrak, DIZIN_BILGILERI):
-        print(r'DRIVER={SQL SERVER};Server=' + DIZIN_BILGILERI.cONN_STR)
         conn = pypyodbc.connect(r'DRIVER={SQL SERVER};Server=' + DIZIN_BILGILERI.cONN_STR) 
-        print('burda')
         sql = 'INSERT INTO LOGLAMA (TARIH,EVRAK,MESAJ,[USER_NAME]) \
                  VALUES (?,?,?,?)'
         curs = conn.cursor()
