@@ -202,6 +202,7 @@ def dosya_olustur_L():
         udtl.USER_INSTANCE_OBS = ui.txtInstance.text()
         udtl.USER_SERVER = ui.txtKullanici.text()
         udtl.USER_PWD_SERVER = ui.txtSifre.text()
+        udtl.FIRMA_ADI = text
         fih.fih__sifirdan_L(udtl, "Deneme" ,"",bAGLAN_LOG.fihLogDizin )
     else:
         fih.fih__sifirdan_S("dddd")

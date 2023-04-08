@@ -10,6 +10,7 @@ OBS_DOSYA = "OBS_SISTEM_2025.DB"
 OBS_FIHRIST_DOSYA = "FIHRIST.DB"
 LOG_DOSYA = "SQL_LOG.MDB"
 DBYERI = "C:/OBS_DATABASES/"
+LOG_SURUCU = "C:/OBS_SISTEM/LOGLAMA/";
 
 #Calisilan Database ler
 from fh.Dao_MsSql   import  Ms_Sql
@@ -20,6 +21,8 @@ from lg.lg_kayit.Dao_MsSql    import  Dao_MsSql
 from lg.lg_kayit.Dao_MySql    import  Dao_MySql
 from lg.lg_kayit.Dao_SqLite    import  Dao_SqLite
 from lg.lg_kayit.Dao_Txt import Dao_Txt
+
+import Cal_Dizini.Baglan_Log as bAGLAN_LOG
 
 #Veritabani Dosyalari
 import sqlite3
@@ -132,6 +135,31 @@ def fih_surucu_kontrol():
         #set_ilk()  //obs_set_olustur();
 
 def char_degis (degisken):
-        return degisken.replace(":","_");
-            
-    # do something
+        return degisken.replace(":","_")
+def dos_kontrol(dosya):
+    import os
+    isExist =os.path.isfile(dosya)
+    if not isExist:
+        return False
+    else:
+        return True
+def create_table_log(dosya,fadi,DIZIN_BILGILERI) :
+        conn =  sqlite3.connect(dosya)
+        sql = 'CREATE TABLE LOGLAMA( \
+                    TARIH DATE NOT NULL, \
+                    MESAJ CHAR(100) NOT NULL,\
+                    EVRAK CHAR(15) NOT NULL,\
+                    USER_NAME CHAR(15) NULL\
+                ) '
+        curs = conn.cursor()
+        curs.execute(sql)
+        sql = "CREATE INDEX IX_LOGLAMA  ON LOGLAMA  (TARIH,EVRAK) ; " ;
+        curs = conn.cursor()
+        curs.execute(sql)
+        
+        conn.commit()
+        conn.close()
+        # SQLITE DOSYASI ILK ACILIS
+        sqlgkayit = Dao_SqLite()
+        sqlgkayit.logla("Dosya Olusturuldu" ,"", DIZIN_BILGILERI)
+        sqlgkayit.logla("Firma Adi:" + fadi ,"", DIZIN_BILGILERI)

@@ -21,3 +21,4 @@ class user_detail:
     LOG = False
     LOG_YERI = ""
     CDID = ""
+    FIRMA_ADI = ""
