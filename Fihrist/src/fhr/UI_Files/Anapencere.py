@@ -431,4 +431,5 @@ class Ui_MainWindow(object):
         self.chckBox_Text.setText(_translate("MainWindow", "Text"))
         self.chckBox_Mail.setText(_translate("MainWindow", "Mail"))
         self.tabKontrol.setTabText(self.tabKontrol.indexOf(self.tab_Ayarlar), _translate("MainWindow", "Ayarlar"))
+    
 

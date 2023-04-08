@@ -13,7 +13,7 @@ DBYERI = "C:/OBS_DATABASES/"
 
 #Calisilan Database ler
 from fh.Dao_MsSql   import  Ms_Sql
-from fh.Dao_MySql   import  MySql
+from fh.Dao_MySql   import  My_Sql
 #Loglama Yontemleri
 from lg.Dao_Mail_At    import  Maill
 from lg.lg_kayit.Dao_MsSql    import  Dao_MsSql
