@@ -33,19 +33,22 @@ class Ms_Sql(IFihristt):
                     Tel_3 nvarchar(25),Tel_4 nvarchar(25),Ozel nvarchar(50),Mail nvarchar(50) )"
         curs = conn.cursor()
         curs.execute(sql)
-        curs.commit()
+        curs.commit()()
+        conn.close()
+        while True:
+            pass
         #**************************** LOG DOSYASI
         conn = pypyodbc.connect(r'DRIVER={SQL SERVER};Server=localhost' + instt + ';UID='+ user_detail.USER_SERVER+';PWD=' + user_detail.USER_PWD_SERVER +';Trust_Connection =True',
                       autocommit=True) 
-        VERITABANI = "OK_Fih" + user_detail.USER_PROG_KODU + "_L"
+        VERITABANI = "OK_Fih" + user_detail.USER_PROG_KODU + "_LOG"
         sql = "CREATE DATABASE [" + VERITABANI + "]"
         curs = conn.cursor()
         curs.execute(sql)
-        curs.commit()
-        
+        curs.close()
+        conn.close()
         #****************************************
         conn = pypyodbc.connect(r'DRIVER={SQL SERVER};Server=localhost' + instt + ';database='+ VERITABANI  + ';Trust_Connection =True;UID='+ user_detail.USER_SERVER+';PWD=' + user_detail.USER_PWD_SERVER) 
-
+        #print(r'DRIVER={SQL SERVER};Server=localhost' + instt + ';database='+ VERITABANI  + ';Trust_Connection =True;UID='+ user_detail.USER_SERVER+';PWD=' + user_detail.USER_PWD_SERVER)
         sql = 'CREATE TABLE [dbo].[LOGLAMA](  \
                     [TARIH] [datetime] NOT NULL, \
                     [MESAJ] [nchar](100) NOT NULL,\
@@ -54,14 +57,14 @@ class Ms_Sql(IFihristt):
                  ) ON [PRIMARY];'
         curs = conn.cursor()
         curs.execute(sql)
-        curs.commit()
+        curs.close()
         sql = 'CREATE NONCLUSTERED INDEX [IX_LOGLAMA] ON [dbo].[LOGLAMA](    [TARIH] ASC,    [EVRAK] ASC , [USER_NAME] ASC  \
                  )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) '
         curs = conn.cursor()
         curs.execute(sql)
         curs.commit()   
         #****************************************
-        conn.commit()
+        #conn.commit()
         conn.close()
         # VERITABANI DOSYASI ILK ACILIS
         vtlgkayit =  lgkyt.Dao_MsSql.Dao_MsSql()

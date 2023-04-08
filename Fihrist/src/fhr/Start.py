@@ -70,23 +70,38 @@ def dizin_kontrol():
             ui.chckBox_Loglama.setChecked(bAGLAN.fihDizin.lOG)
             if not ui.chckBox_Loglama.isChecked():
                 loglama_kapat()
+                
+            ui.comboBox.setCurrentText(bAGLAN.fihDizin.hAN_SQL)
+            if bAGLAN.fihDizin.hAN_SQL == "Ms Sql" :
+                glb._Fihrist = [glb.Ms_Sql]
+            elif bAGLAN.fihDizin.hAN_SQL == "My Sql" :
+                glb._Fihrist = [glb.My_Sql]
             logl = bAGLAN.fihDizin.lOGLAMA_YERI.split(',')
+            Liste = []
             if logl[0] == "True" :
                 ui.chckBox_Veritabani.setChecked(True)
+                if bAGLAN.fihDizin.hAN_SQL == "Ms Sql" :
+                    Liste.append(glb.Dao_MsSql)
+                elif bAGLAN.fihDizin.hAN_SQL == "My Sql" :
+                    Liste.append(glb.Dao_MySql)
             else:
                 ui.chckBox_Veritabani.setChecked(False)
             if logl[1] == "True" :
+                Liste.append(glb.Dao_SqLite())
                 ui.chckBox_SQLite.setChecked(True)
             else:
                 ui.chckBox_SQLite.setChecked(False)
             if logl[2] == "True" :
+                Liste.append(glb.Dao_Txt)
                 ui.chckBox_Text.setChecked(True)
             else:
                 ui.chckBox_Text.setChecked(False)
             if logl[3] == "True" :
+                Liste.append(glb.Maill())
                 ui.chckBox_Mail.setChecked(True)
             else:
                 ui.chckBox_Mail.setChecked(False)
+                glb._IFihrist_Loger = Liste
             btnKisiler()
     else:
         glb.fih_surucu_kontrol()
@@ -190,8 +205,17 @@ def dosya_olustur_L():
     glb._IFihrist_Loger = [glb.Dao_MsSql]
     fih = Fihrist_Access(glb._Fihrist,glb._IFihrist_Loger)
    
-    bAGLAN.cONNECT("fffff")
+    #******************************************
+    bAGLAN.fihDizin.kULLANICI = ui.txtKullanici.text()
+    bAGLAN.fihDizin.sIFRESI = ui.txtSifre.text()
+    bAGLAN.fihDizin.hAN_SQL = ui.comboBox.currentText()
+    bAGLAN.fihDizin.sERVER = ui.txtSifre.text()
+    bAGLAN.fihDizin.kOD = ui.txtKod.text() 
+    bAGLAN.fihDizin.yER = "L";
+    bAGLAN.fihDizin.iNSTANCE =ui.txtInstance.text()
     bAGLAN_LOG.cONNECT()
+    #******************************************
+   
         
     if ui.chckBox_Lokal.isChecked() :
         from User_Islemleri.User_Details import user_detail 
@@ -267,8 +291,8 @@ def btnKisiler():
     ui.tabKontrol.tabBar().close()
     ui.tabKontrol.setCurrentWidget(ui.tabKontrol.findChild(QWidget, "tab_Kisiler")) 
     
-    glb._Fihrist = [glb.Ms_Sql]
-    glb._IFihrist_Loger = []
+    #glb._Fihrist = [glb.Ms_Sql]
+    #glb._IFihrist_Loger = []
     fih = Fihrist_Access(glb._Fihrist,glb._IFihrist_Loger)
     fih.baglan("Deneme mesaji")   
 def chckBox_Lokal_Checked():

@@ -139,7 +139,7 @@ QDialogButtonBox {
          </size>
         </property>
         <property name="text">
-         <string>.....</string>
+         <string>Kisiler</string>
         </property>
        </widget>
       </item>
@@ -662,8 +662,8 @@ QDialogButtonBox {
             <widget class="QPushButton" name="btnBaglan">
              <property name="minimumSize">
               <size>
-               <width>37</width>
-               <height>18</height>
+               <width>64</width>
+               <height>25</height>
               </size>
              </property>
              <property name="text">
@@ -679,8 +679,8 @@ QDialogButtonBox {
             <widget class="QPushButton" name="btnVeritabani">
              <property name="minimumSize">
               <size>
-               <width>37</width>
-               <height>18</height>
+               <width>64</width>
+               <height>25</height>
               </size>
              </property>
              <property name="text">
@@ -696,8 +696,8 @@ QDialogButtonBox {
             <widget class="QPushButton" name="btnSil">
              <property name="minimumSize">
               <size>
-               <width>37</width>
-               <height>18</height>
+               <width>64</width>
+               <height>25</height>
               </size>
              </property>
              <property name="text">
@@ -713,8 +713,8 @@ QDialogButtonBox {
             <widget class="QPushButton" name="btnEkle">
              <property name="minimumSize">
               <size>
-               <width>37</width>
-               <height>18</height>
+               <width>64</width>
+               <height>25</height>
               </size>
              </property>
              <property name="text">
@@ -730,8 +730,8 @@ QDialogButtonBox {
             <widget class="QPushButton" name="btnKaydet">
              <property name="minimumSize">
               <size>
-               <width>37</width>
-               <height>18</height>
+               <width>64</width>
+               <height>25</height>
               </size>
              </property>
              <property name="text">
@@ -747,8 +747,8 @@ QDialogButtonBox {
             <widget class="QPushButton" name="brnCikis">
              <property name="minimumSize">
               <size>
-               <width>37</width>
-               <height>18</height>
+               <width>64</width>
+               <height>25</height>
               </size>
              </property>
              <property name="text">

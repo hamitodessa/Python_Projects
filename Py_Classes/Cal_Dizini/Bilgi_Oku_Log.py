@@ -15,7 +15,7 @@ class Bilgi_Oku_Log:
                 port = "" 
                 if (oDIZIN.sERVER != "") :
                     port =  ":" + oDIZIN.sERVER
-                dIZIN.cONN_STR =  "localhost" + port + ";instanceName=" + oDIZIN.iNSTANCE + " ; database=" + dOSYA_BASLANGIC  + oDIZIN.kOD + "_LOG"
+                dIZIN.cONN_STR =  'localhost'  + '\\' + oDIZIN.iNSTANCE + ';database=' + dOSYA_BASLANGIC  + oDIZIN.kOD + '_LOG' + ';Trust_Connection =True;UID='+ oDIZIN.kULLANICI+';PWD=' + oDIZIN.sIFRESI
                 dIZIN.mODUL =    dOSYA_BASLANGIC  + oDIZIN.kOD + "_mSSQL" + ".DB" #//SQLITE
                 dIZIN.mODULADI =    dOSYA_BASLANGIC  + oDIZIN.kOD  + "_mSSQL" #//TEXT DOSYA
             elif (oDIZIN.hAN_SQL == "My Sql") :

@@ -28,4 +28,6 @@ def details_yaz(user_detail):
     conn.commit()
     conn.close()
     
+    
+    
  
