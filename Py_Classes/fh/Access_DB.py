@@ -13,11 +13,9 @@ class Fihrist_Access():
             qwe.baglan(self,mesaj)
         #for qwe in self.log_liste:
         #    qwe.logla(self,mesaj)
-    def fih__sifirdan_L(self,user_detail,mesaj, evrak, DIZIN_BILGILERI):
+    def fih__sifirdan_L(self,user_detail):
         for qwe in self.IDb:
             qwe.fih__sifirdan_L(self,user_detail)
-        for qwe in self.log_liste:
-            qwe.logla(self,mesaj, evrak, DIZIN_BILGILERI)
     def fih__sifirdan_S(self,mesaj):
         for qwe in self.IDb:
             qwe.fih__sifirdan_S(self,mesaj)

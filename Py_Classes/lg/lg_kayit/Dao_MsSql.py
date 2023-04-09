@@ -20,5 +20,5 @@ class Dao_MsSql(ILogKayitInterface):
         curs.commit()
         conn.close()
     def log_rapor(self):
-        print('Connecting to MsSql Log Kayite...' )
+        print('Connecting to MsSql Log Kayit...' )
     

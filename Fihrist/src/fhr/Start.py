@@ -49,7 +49,7 @@ def dizin_kontrol():
     isExist =os.path.isfile(glb.SURUCU + glb.OBS_FIHRIST_DOSYA)
     if isExist:
         #Dosya var
-        bAGLAN.cONNECT("fffff")
+        bAGLAN.cONNECT(glb.KULL_ADI)
         bAGLAN_LOG.cONNECT()
         if bAGLAN.fihDizin.kULLANICI == "":
             loglama_kapat()
@@ -70,7 +70,6 @@ def dizin_kontrol():
             ui.chckBox_Loglama.setChecked(bAGLAN.fihDizin.lOG)
             if not ui.chckBox_Loglama.isChecked():
                 loglama_kapat()
-                
             ui.comboBox.setCurrentText(bAGLAN.fihDizin.hAN_SQL)
             if bAGLAN.fihDizin.hAN_SQL == "Ms Sql" :
                 glb._Fihrist = [glb.Ms_Sql]
@@ -101,7 +100,7 @@ def dizin_kontrol():
                 ui.chckBox_Mail.setChecked(True)
             else:
                 ui.chckBox_Mail.setChecked(False)
-                glb._IFihrist_Loger = Liste
+            glb._IFihrist_Loger = Liste
             btnKisiler()
     else:
         glb.fih_surucu_kontrol()
@@ -215,8 +214,6 @@ def dosya_olustur_L():
     bAGLAN.fihDizin.iNSTANCE =ui.txtInstance.text()
     bAGLAN_LOG.cONNECT()
     #******************************************
-   
-        
     if ui.chckBox_Lokal.isChecked() :
         from User_Islemleri.User_Details import user_detail 
         udtl = user_detail ()
@@ -227,17 +224,17 @@ def dosya_olustur_L():
         udtl.USER_SERVER = ui.txtKullanici.text()
         udtl.USER_PWD_SERVER = ui.txtSifre.text()
         udtl.FIRMA_ADI = text
-        fih.fih__sifirdan_L(udtl, "Deneme" ,"",bAGLAN_LOG.fihLogDizin )
+        fih.fih__sifirdan_L(udtl)
     else:
         fih.fih__sifirdan_S("dddd")
     
     calisma_dizini_yaz()
 def calisma_dizini_yaz():
-    uisl.calisanmi_degis("fffff", "Fihrist")
+    uisl.calisanmi_degis(glb.KULL_ADI, "Fihrist")
     from User_Islemleri.User_Details import user_detail 
     udtl = user_detail ()
     udtl.USER_PROG_KODU = ui.txtKod.text() 
-    udtl.USER_NAME = "fffff"
+    udtl.USER_NAME = glb.KULL_ADI
     udtl.USER_SERVER = ui.txtKullanici.text()
     udtl.USER_PWD_SERVER = ui.txtSifre.text()
     udtl.USER_INSTANCE_OBS = ui.txtInstance.text()

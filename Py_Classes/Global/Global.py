@@ -11,7 +11,7 @@ OBS_FIHRIST_DOSYA = "FIHRIST.DB"
 LOG_DOSYA = "SQL_LOG.MDB"
 DBYERI = "C:/OBS_DATABASES/"
 LOG_SURUCU = "C:/OBS_SISTEM/LOGLAMA/"
-KULL_ADI = ""
+KULL_ADI = "fffff"
 
 #Calisilan Database ler
 from fh.Dao_MsSql   import  Ms_Sql
@@ -157,7 +157,6 @@ def create_table_log(dosya,fadi,DIZIN_BILGILERI) :
         sql = "CREATE INDEX IX_LOGLAMA  ON LOGLAMA  (TARIH,EVRAK) ; " ;
         curs = conn.cursor()
         curs.execute(sql)
-        
         conn.commit()
         conn.close()
         # SQLITE DOSYASI ILK ACILIS
