@@ -33,8 +33,6 @@ class Start(QMainWindow,Ui_MainWindow):
 
 #import pdb;pdb.set_trace()
 
-
-
 #glb.obs_dosya_olustur()
 
 #glb._Fihrist = [glb.Ms_Sql,glb.My_Sql]
