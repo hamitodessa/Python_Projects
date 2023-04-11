@@ -235,7 +235,7 @@ QDialogButtonBox {
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>100</height>
+          <height>150</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -259,7 +259,7 @@ QDialogButtonBox {
          <string notr="true"/>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <property name="documentMode">
          <bool>false</bool>
