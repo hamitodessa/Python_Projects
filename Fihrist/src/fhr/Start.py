@@ -22,13 +22,13 @@ import Cal_Dizini.Baglan_Log as bAGLAN_LOG
 from fhr.UI_Files.Anapencere import *
 from Server_Baglan.Connect import Connect
 
-
+class Start(QMainWindow,Ui_MainWindow):
+    def __init__(self,parent=None):
+        super(Start,self).__init__(parent)
+        self.setupUi(self)
     
 
-Uygulama= QApplication(sys.argv)
-penAna = QMainWindow()
-ui= Ui_MainWindow()
-ui.setupUi(penAna)
+
 
 
 #import pdb;pdb.set_trace()
@@ -319,7 +319,12 @@ def loglama_kapat():
     ui.chckBox_Text.setVisible(False)
     ui.chckBox_Mail.setVisible(False)
         
-  
+
+#***********************************************************
+Uygulama= QApplication(sys.argv)
+penAna = QMainWindow()
+ui= Ui_MainWindow()
+ui.setupUi(penAna)
 #-----------------BUTTONLAR------------------------------------*
 ui.btnAyarlar.clicked.connect(btnAyarlar)
 ui.btnKisiler.clicked.connect(btnKisiler)
@@ -334,6 +339,7 @@ ui.txtcdid.setVisible(False)
 #*************************** Kontrol ***********************
 dizin_kontrol()
 #***********************************************************
+
 
 penAna.show()
 
