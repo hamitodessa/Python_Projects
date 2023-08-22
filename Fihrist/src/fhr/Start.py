@@ -84,7 +84,7 @@ def dizin_kontrol():
             else:
                 ui.chckBox_Veritabani.setChecked(False)
             if logl[1] == "True" :
-                Liste.append(glb.Dao_SqLite())
+                Liste.append(glb.Dao_SqLite)
                 ui.chckBox_SQLite.setChecked(True)
             else:
                 ui.chckBox_SQLite.setChecked(False)
@@ -94,7 +94,7 @@ def dizin_kontrol():
             else:
                 ui.chckBox_Text.setChecked(False)
             if logl[3] == "True" :
-                Liste.append(glb.Maill())
+                Liste.append(glb.Maill)
                 ui.chckBox_Mail.setChecked(True)
             else:
                 ui.chckBox_Mail.setChecked(False)
@@ -290,7 +290,7 @@ def btnKisiler():
     #glb._Fihrist = [glb.Ms_Sql]
     #glb._IFihrist_Loger = []
     fih = Fihrist_Access(glb._Fihrist,glb._IFihrist_Loger)
-    fih.baglan("Deneme mesaji")   
+    fih.baglan("Deneme mesaji","12345", bAGLAN_LOG.fihLogDizin)  
 def chckBox_Lokal_Checked():
     if ui.chckBox_Lokal.isChecked() :
         ui.chckBox_Server.setChecked(False)
