@@ -5,7 +5,7 @@ Created on Apr 1, 2023
 '''
 
 from fh.IFihrist import IFihristt
-from User_Islemleri.User_Details import user_detail 
+#from User_Islemleri.User_Details import user_detail 
 
 
 class My_Sql(IFihristt):

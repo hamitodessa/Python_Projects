@@ -5,7 +5,6 @@ Created on Apr 1, 2023
 '''
 
 from lg.lg_kayit.ILog_Kayit import ILogKayitInterface
-from Cal_Dizini.Dizin_Bilgileri import DIZIN_BILGILERI
 from Global import Global  as glb
 import pypyodbc 
 import datetime

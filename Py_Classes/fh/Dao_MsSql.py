@@ -6,7 +6,7 @@ Created on Apr 1, 2023
 
 from fh.IFihrist import IFihristt
 import Cal_Dizini.Baglan as cdzn
-from User_Islemleri.User_Details import user_detail 
+#from User_Islemleri.User_Details import user_detail 
 import Cal_Dizini.Baglan_Log as bAGLAN_LOG
 import lg.lg_kayit as lgkyt
 from Global import Global  as glb
