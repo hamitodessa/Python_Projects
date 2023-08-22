@@ -8,7 +8,7 @@ import smtplib
 from email.message import EmailMessage
 
 class Maill(ILogerr):
-    def logla(self,mesaj):
+    def logla(self, mesaj, evrak, DIZIN_BILGILERI):
         print('Connecting to Mail aT Database...' + mesaj)
         
     #msg = EmailMessage()
