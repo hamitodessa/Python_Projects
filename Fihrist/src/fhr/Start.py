@@ -289,6 +289,7 @@ def btnKisiler():
     
     #glb._Fihrist = [glb.Ms_Sql]
     #glb._IFihrist_Loger = []
+    #******************************** asagidaki kod deneme amacli *******************
     fih = Fihrist_Access(glb._Fihrist,glb._IFihrist_Loger)
     fih.baglan("Deneme mesaji","12345", bAGLAN_LOG.fihLogDizin)  
 def chckBox_Lokal_Checked():
