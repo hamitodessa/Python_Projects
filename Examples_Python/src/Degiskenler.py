@@ -13,7 +13,7 @@ from pt.Loglama.MsSql_Log import lg_kayitMssql
 from pt.Loglama.Sq_Lite import sq_lite
 from pt.Loglama.Dosya_Yaz import Dosya_yaz
 
-classname = [Oracle]
+classname = [Oracle,Sybase]
 clsnm = Sybase
 
 #lgcls = [LG_MySql,LG_Oracle,lg_kayitMssql,sq_lite,Dosya_yaz]

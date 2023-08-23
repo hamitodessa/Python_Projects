@@ -7,7 +7,7 @@ Created on Mar 30, 2023
 from DBInterfacee import DBInterface
 
 class Sybase(DBInterface):
-   def connect(self):
-       print('Connecting to Sybase Database...')
-   def disconnect(self):
-       print('Disconnecting to Sybase Database...')   
+    def connect(self,mesaj,mesaj2):
+        print('Connecting to Sybase Database...')
+    def disconnect(self):
+        print('Disconnecting to Sybase Database...')   
