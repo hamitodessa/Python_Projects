@@ -15,7 +15,7 @@ from PyQt5.QtWidgets import QApplication ,QMainWindow,QWidget,QInputDialog
 from Global import Global  as glb
 from User_Islemleri import User_Islemler as uisl
 from fh.Access_DB import Fihrist_Access 
-
+import os
 
 import Cal_Dizini.Baglan as bAGLAN
 import Cal_Dizini.Baglan_Log as bAGLAN_LOG
@@ -43,7 +43,6 @@ class Start(QMainWindow,Ui_MainWindow):
 
 
 def dizin_kontrol():
-    import os
     isExist =os.path.isfile(glb.SURUCU + glb.OBS_FIHRIST_DOSYA)
     if isExist:
         #Dosya var
@@ -339,6 +338,7 @@ ui.txtcdid.setVisible(False)
 dizin_kontrol()
 #***********************************************************
 
+print(os.getlogin())
 
 penAna.show()
 
