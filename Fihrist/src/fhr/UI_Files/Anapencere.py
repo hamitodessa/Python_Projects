@@ -14,7 +14,7 @@ import fhr.UI_Files.fih_resources
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1091, 723)
+        MainWindow.resize(1200, 800)
         MainWindow.setStyleSheet(".QWidget {\n"
 "   background-color: beige;\n"
 "}\n"
@@ -161,11 +161,17 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setMinimumSize(QtCore.QSize(0, 100))
+        self.frame.setMinimumSize(QtCore.QSize(0, 150))
         self.frame.setStyleSheet("background-color: rgb(85, 170, 127);")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
+        self.lineEdit = QtWidgets.QLineEdit(self.frame)
+        self.lineEdit.setGeometry(QtCore.QRect(80, 30, 113, 21))
+        self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.frame)
+        self.lineEdit_2.setGeometry(QtCore.QRect(80, 60, 113, 21))
+        self.lineEdit_2.setObjectName("lineEdit_2")
         self.horizontalLayout_2.addWidget(self.frame)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
@@ -338,7 +344,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
         self.btnBaglan = QtWidgets.QPushButton(self.layoutWidget2)
-        self.btnBaglan.setMinimumSize(QtCore.QSize(37, 18))
+        self.btnBaglan.setMinimumSize(QtCore.QSize(64, 25))
         self.btnBaglan.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/newPrefix/connected-32.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -346,7 +352,7 @@ class Ui_MainWindow(object):
         self.btnBaglan.setObjectName("btnBaglan")
         self.horizontalLayout_10.addWidget(self.btnBaglan)
         self.btnVeritabani = QtWidgets.QPushButton(self.layoutWidget2)
-        self.btnVeritabani.setMinimumSize(QtCore.QSize(37, 18))
+        self.btnVeritabani.setMinimumSize(QtCore.QSize(64, 25))
         self.btnVeritabani.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/newPrefix/database-32.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -354,7 +360,7 @@ class Ui_MainWindow(object):
         self.btnVeritabani.setObjectName("btnVeritabani")
         self.horizontalLayout_10.addWidget(self.btnVeritabani)
         self.btnSil = QtWidgets.QPushButton(self.layoutWidget2)
-        self.btnSil.setMinimumSize(QtCore.QSize(37, 18))
+        self.btnSil.setMinimumSize(QtCore.QSize(64, 25))
         self.btnSil.setText("")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(":/newPrefix/delete-32.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -362,7 +368,7 @@ class Ui_MainWindow(object):
         self.btnSil.setObjectName("btnSil")
         self.horizontalLayout_10.addWidget(self.btnSil)
         self.btnEkle = QtWidgets.QPushButton(self.layoutWidget2)
-        self.btnEkle.setMinimumSize(QtCore.QSize(37, 18))
+        self.btnEkle.setMinimumSize(QtCore.QSize(64, 25))
         self.btnEkle.setText("")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap(":/newPrefix/add-32.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -370,7 +376,7 @@ class Ui_MainWindow(object):
         self.btnEkle.setObjectName("btnEkle")
         self.horizontalLayout_10.addWidget(self.btnEkle)
         self.btnKaydet = QtWidgets.QPushButton(self.layoutWidget2)
-        self.btnKaydet.setMinimumSize(QtCore.QSize(37, 18))
+        self.btnKaydet.setMinimumSize(QtCore.QSize(64, 25))
         self.btnKaydet.setText("")
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap(":/newPrefix/save-32.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -378,7 +384,7 @@ class Ui_MainWindow(object):
         self.btnKaydet.setObjectName("btnKaydet")
         self.horizontalLayout_10.addWidget(self.btnKaydet)
         self.brnCikis = QtWidgets.QPushButton(self.layoutWidget2)
-        self.brnCikis.setMinimumSize(QtCore.QSize(37, 18))
+        self.brnCikis.setMinimumSize(QtCore.QSize(64, 25))
         self.brnCikis.setText("")
         icon5 = QtGui.QIcon()
         icon5.addPixmap(QtGui.QPixmap(":/newPrefix/exit-32.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -403,7 +409,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.btnKisiler.setText(_translate("MainWindow", "....."))
+        self.btnKisiler.setText(_translate("MainWindow", "Kisiler"))
         self.pushButton_2.setText(_translate("MainWindow", "....."))
         self.pushButton_5.setText(_translate("MainWindow", "....."))
         self.pushButton_3.setText(_translate("MainWindow", "....."))
@@ -431,5 +437,4 @@ class Ui_MainWindow(object):
         self.chckBox_Text.setText(_translate("MainWindow", "Text"))
         self.chckBox_Mail.setText(_translate("MainWindow", "Mail"))
         self.tabKontrol.setTabText(self.tabKontrol.indexOf(self.tab_Ayarlar), _translate("MainWindow", "Ayarlar"))
-    
 

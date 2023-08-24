@@ -35,6 +35,8 @@ class Maill(ILogKayitInterface):
 
             part.add_header('Content-Disposition', 'attachment', filename=filename)
             message.attach(part)
+            return
+            print("burda")
             with smtplib.SMTP(smtp_server, port) as server:
                 server.starttls()
                 server.login(sender_email, password)
