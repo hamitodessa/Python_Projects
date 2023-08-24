@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1091</width>
-    <height>723</height>
+    <width>1200</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -247,6 +247,26 @@ QDialogButtonBox {
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>30</y>
+           <width>113</width>
+           <height>21</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_2">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>60</y>
+           <width>113</width>
+           <height>21</height>
+          </rect>
+         </property>
+        </widget>
        </widget>
       </item>
      </layout>
@@ -259,7 +279,7 @@ QDialogButtonBox {
          <string notr="true"/>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <property name="documentMode">
          <bool>false</bool>
