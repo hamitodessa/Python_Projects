@@ -335,7 +335,15 @@ ui.btnVeritabani.clicked.connect(dosya_kontrol)
 ui.tabKontrol.tabBar().close()
 ui.txtcdid.setVisible(False)
 #*************************** Kontrol ***********************
-dizin_kontrol()
+try:
+    dizin_kontrol()
+    
+except Exception as e:
+        QApplication.restoreOverrideCursor()
+        if hasattr(e, 'message'):
+            messagebox.showwarning("Dizin Kontrol", e.message)
+        else:
+            messagebox.showwarning("Dizin Kontrol", e)
 #***********************************************************
 
 print(os.getlogin())
