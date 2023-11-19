@@ -5,6 +5,7 @@ Created on Apr 1, 2023
 '''
 from lg.lg_kayit.ILog_Kayit import ILogKayitInterface
 import smtplib
+import os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.utils import  formatdate
@@ -28,7 +29,7 @@ class Maill(ILogKayitInterface):
             message['Date'] = formatdate(localtime=True)
             message.attach(MIMEText(mesaj))
 
-            filename = "C:/OBS_SISTEM/hamit_OBS_SISTEM_2025.DB"
+            filename = "C:/OBS_SISTEM/" + os.getlogin() + "_OBS_SISTEM_2025.DB"
             part = MIMEBase('application', "octet-stream")
             part.set_payload(open(filename, "rb").read())
             encoders.encode_base64(part)
